@@ -41,6 +41,5 @@ public class InscriptionController extends Controller {
             List<User> usersSupprimes = User.find("isSupprime = true").fetch();
             render(users, usersSupprimes);
         }
-    }
 
 }

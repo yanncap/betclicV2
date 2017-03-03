@@ -1,7 +1,9 @@
 package controllers;
 
+import models.UserContact;
 import play.data.validation.Validation;
 import play.mvc.Controller;
+import services.UserContactService;
 
 import javax.validation.Valid;
 
