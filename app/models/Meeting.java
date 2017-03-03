@@ -14,7 +14,7 @@ import java.util.List;
  * Created by formation on 03/03/17.
  */
 @Entity
-public class Meetting extends Model {
+public class Meeting extends Model {
     @Required
     @Column(nullable = false)
     public String name ;

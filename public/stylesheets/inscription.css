@@ -1,0 +1,51 @@
+.DPinscription, .LRinscription, .DCinscription{
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.forInscrip{
+    width: 80% ;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.forInscrip label{
+    display: inline-block;
+    width: 200px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.forInscrip .required{
+    color:red;
+}
+
+.conditions{
+    margin-top: 10px;
+}
+
+.forInscrip .annulerInsc, .forInscrip .validerInsc{
+    background: #4B99AD;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    color: #fff;
+    margin: 20px;
+}
+
+
+input:required {
+    font-style: underline;
+}
+
+
+
+/* MEDIA QUERIES------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 960px){
+
+}
+
+
+@media only screen and (max-width: 730px){
+
+}

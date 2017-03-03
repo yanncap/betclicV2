@@ -53,7 +53,7 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
-
+    #{get 'moreStyles' /}
     <!--<script src="lib/jquery/jquery-1.12.4.min.js"></script>-->
 </head>
     <body>
@@ -105,7 +105,7 @@
                     <!--<input type="submit" value="OK" class="ok"> -->
                     <a href="#" class="ok" id="okS">OK</a>
                 </form>
-                <p class="paraInscription">Crée un Compte? <a href="inscription.html" class="lienForm"><u>Inscrivez Vous</u></a></p>
+                <p class="paraInscription">Crée un Compte? <a href="@{InscriptionController.inscription()}" class="lienForm"><u>Inscrivez Vous</u></a></p>
 
             </li>
 

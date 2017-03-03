@@ -1,0 +1,40 @@
+.pargpad{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.DPinscription, .LRinscription{
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.forInscrip{
+    width: 80% ;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.forInscrip label{
+    display: inline-block;
+    width: 200px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.forInscrip .required{
+    color:red;
+}
+
+
+.forInscrip .annulerInsc, .forInscrip .validerInsc{
+    background: #4B99AD;
+    padding: 8px 15px 8px 15px;
+    border: none;
+    color: #fff;
+    margin: 20px;
+}
+
+
+input:required {
+    font-style: underline;
+}
