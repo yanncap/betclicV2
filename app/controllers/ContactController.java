@@ -15,6 +15,10 @@ import java.util.List;
  */
 public class ContactController  extends Controller{
 
+    public static void empty (){
+        render();
+    }
+
     public static void contact( @Required @Email String email,
                                 @Required String lastname,
                                 @Required String firstname,
