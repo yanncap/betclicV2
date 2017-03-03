@@ -10,7 +10,7 @@ import java.util.List;
  * Created by formation on 03/03/17.
  */
 @Entity
-public class Bet extends Model{
+public class UserContact extends Model{
 
     @Required
     @Column(nullable = false)
