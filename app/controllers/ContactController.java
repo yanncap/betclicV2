@@ -26,7 +26,8 @@ public class ContactController  extends Controller{
         if (Validation.hasErrors()) {
             apiValidationErrors(Validation.errors());
         }
-        render();
+//        redirect("index.html");
+        Application.index();
     }
 
     protected static void apiValidationErrors(List<Error> errors) {
