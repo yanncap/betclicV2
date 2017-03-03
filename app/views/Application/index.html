@@ -1,4 +1,233 @@
 #{extends 'main.html' /}
-#{set title:'Home' /}
+#{set title:'BetClic.fr' /}
 
-<H1>PAGE CONTENT2</H1>
+<div class="shadow"></div>
+<nav class="menuLateral">
+    <h2 class="titre2Lat" id="titreCoo">Connexion</h2>
+    <div class="liForm">
+        <form class="formulaire">
+            <div class="triche">
+                <input class="pseudo" type="text" name="Pseudo" id="pseudoM" placeholder="Pseudo">
+                <a href="#"><i><u>oublié?</u></i></a>
+            </div>
+            <span class="triche pass">
+                            <input class="password" id="passwordM" type="password" name="password" placeholder="Mot de passe">
+                            <a href="#"><i><u>oublié?</u></i></a>
+                        </span>
+            <!--<input type="submit" value="OK" class="ok"> -->
+            <a href="#" class="ok" id="okM">OK</a>
+        </form>
+        <p class="paraInscription">Crée un Compte? <a href="./html/inscription.html"><u>Inscrivez Vous</u></a></p>
+    </div>
+    <div class="ligneStylay"></div>
+    <h2 class="titre2Lat">Navigation</h2>
+    <ul class="listeMenuMob">
+        <li>
+            <a href="#"><i>ACCEUIL</i></a>
+        </li>
+        <li>
+            <a href="html/paris.html"><i>PARI</i></a>
+        </li>
+        <li>
+            <a href="html/contact.html"><i>CONTACT</i></a>
+        </li>
+        <li>
+            <a href="html/apropos.html"><i>A PROPOS</i></a>
+        </li>
+    </ul>
+</nav>
+
+
+<nav class="menu">
+    <ul class="container flexStyleH">
+        <li id="menuActif" class="noMob">
+            <a href="#"><i>ACCEUIL</i></a>
+        </li>
+        <li class="noMob">
+            <a href="html/paris.html"><i>PARI</i></a>
+        </li>
+        <li class="noMob">
+            <a href="html/contact.html"><i>CONTACT</i></a>
+        </li>
+        <li class="noMob">
+            <a href="html/apropos.html"><i>A PROPOS</i></a>
+        </li>
+        <li id="responSearch_700px">
+            <form action="html/paris.html">
+                <input id="responSearch" type="search" placeholder="Recherchez un pari sportif">
+            </form>
+        </li>
+    </ul>
+</nav>
+
+
+<main class="container principale">
+    <article class="contenu">
+        <a href="html/inscription.html"><div class="pub">
+
+        </div></a>
+
+        <div class="caroussel">
+            <div class="fondCarou"></div>
+        </div>
+
+        <div class="topParis">
+            <nav>
+                <h2 id="pariActif">Le TOP des paris sportifs</h2>
+                <!--<h2>Les paris de dernière minute</h2>-->
+            </nav>
+            <ul class="ligneParis colonnePari">
+                <li class="horraire"></li>
+                <li class="infoParis"></li>
+                <li class="vic">1</li>
+                <li class="vic">Nul</li>
+                <li class="vic">2</li>
+                <li class="typePari"></li>
+                <li class="stat"></li>
+            </ul>
+            <ul class="ligneParis">
+                <li class="horraire">8 H</li>
+                <li class="infoParis">
+                    <p><span class="ballon"></span>Football, Coupe de France</p>
+                    <p>Bordeaux - Dijon</p>
+                </li>
+                <li class="vic">1.58</li>
+                <li class="vic">3.80</li>
+                <li class="vic">5.50</li>
+                <li class="typePari">+76</li>
+                <li class="stat">
+                    <a href="#"><img src="img/stats.png"></a>
+                </li>
+            </ul>
+            <ul class="ligneParis">
+                <li class="horraire">8 H</li>
+                <li class="infoParis">
+                    <p><span class="ballon"></span>Football, Coupe de France</p>
+                    <p>Bordeaux - Dijon</p>
+                </li>
+                <li class="vic">1.58</li>
+                <li class="vic">3.80</li>
+                <li class="vic">5.50</li>
+                <li class="typePari">+76</li>
+                <li class="stat">
+                    <a href="#"><img src="img/stats.png"></a>
+                </li>
+            </ul>
+            <ul class="ligneParis">
+                <li class="horraire">8 H</li>
+                <li class="infoParis">
+                    <p><span class="ballon"></span>Football, Coupe de France</p>
+                    <p>Bordeaux - Dijon</p>
+                </li>
+                <li class="vic">1.58</li>
+                <li class="vic">3.80</li>
+                <li class="vic">5.50</li>
+                <li class="typePari">+76</li>
+                <li class="stat">
+                    <a href="#"><img src="img/stats.png"></a>
+                </li>
+            </ul>
+            <ul class="ligneParis">
+                <li class="horraire">8 H</li>
+                <li class="infoParis">
+                    <p><span class="ballon"></span>Football, Coupe de France</p>
+                    <p>Bordeaux - Dijon</p>
+                </li>
+                <li class="vic">1.58</li>
+                <li class="vic">3.80</li>
+                <li class="vic">5.50</li>
+                <li class="typePari">+76</li>
+                <li class="stat">
+                    <a href="#"><img src="img/stats.png"></a>
+                </li>
+            </ul>
+            <ul class="ligneParis">
+                <li class="horraire">8 H</li>
+                <li class="infoParis">
+                    <p><span class="ballon"></span>Football, Coupe de France</p>
+                    <p>Bordeaux - Dijon</p>
+                </li>
+                <li class="vic">1.58</li>
+                <li class="vic">3.80</li>
+                <li class="vic">5.50</li>
+                <li class="typePari">+76</li>
+                <li class="stat">
+                    <a href="#"><img src="img/stats.png"></a>
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="nowIn">
+            <h3 class="titre3">En ce moment sur Betclic :</h3>
+            <div class="ligneStylay"></div>
+            <ul class="nowInUl flexStyleH">
+                <li id="box1"></li>
+                <li id="box2"></li>
+            </ul>
+        </div>
+
+    </article>
+
+
+    <aside class="aCote">
+        <h3 class="titre3">Recherchez un pari sportif :</h3>
+        <div class="ligneStylay"></div>
+        <form action="html/paris.html">
+            <input class="recherche" type="search" placeholder="Indiquez votre requête">
+        </form>
+        <h3 class="titre3">Top 5 des paris combinés</h3>
+        <div class="ligneStylay"></div>
+
+        <div class="topCombine">
+            <ul>
+                <li>
+                    <span class="medaille"></span>
+                    <span class="spanDetail">
+                            <p><span class="nomVic">Mathieu P.</span><span class="gain">26 000 €</span></p>
+                            <p><span>pari: 10 €</span><span>Cote: 1751,01</span></p>
+                        </span>
+                </li>
+                <li>
+                    <span class="medaille"></span>
+                    <span class="spanDetail">
+                            <p><span class="nomVic">Mathieu P.</span><span class="gain">26 000 €</span></p>
+                            <p><span>pari: 10 €</span><span>Cote: 1751,01</span></p>
+                        </span>
+                </li>
+                <li>
+                    <span class="medaille"></span>
+                    <span class="spanDetail">
+                            <p><span class="nomVic">Mathieu P.</span><span class="gain">26 000 €</span></p>
+                            <p><span>pari: 10 €</span><span>Cote: 1751,01</span></p>
+                        </span>
+                </li>
+                <li>
+                    <span class="medaille"></span>
+                    <span class="spanDetail">
+                            <p><span class="nomVic">Mathieu P.</span><span class="gain">26 000 €</span></p>
+                            <p><span>pari: 10 €</span><span>Cote: 1751,01</span></p>
+                        </span>
+                </li>
+                <li>
+                    <span class="medaille"></span>
+                    <span class="spanDetail">
+                            <p><span class="nomVic">Mathieu P.</span><span class="gain">26 000 €</span></p>
+                            <p><span>pari: 10 €</span><span>Cote: 1751,01</span></p>
+                        </span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="pubNav"></div>
+        <h3 class="titre3">Parier avec Betclic !</h3>
+        <div class="ligneStylay"></div>
+        <div class="moreInfo">
+            <p>Retrouvez les meilleurs paris sportif à tout moment sur betclic !<br>
+                <a href="#">En savoir plus sur le paris en ligne !</a>
+            </p>
+
+        </div>
+    </aside>
+
+</main>

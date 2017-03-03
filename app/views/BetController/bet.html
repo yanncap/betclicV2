@@ -1,10 +1,305 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+#{extends 'main.html' /}
+#{set title:'BetClic.fr - Paris' /}
 
-</body>
-</html>
+
+
+<div class="shadow"></div>
+<nav class="menuLateral">
+    <h2 class="titre2Lat" id="titreCoo">Connexion</h2>
+    <div class="liForm">
+        <form class="formulaire">
+            <div class="triche">
+                <input class="pseudo" type="text" name="Pseudo" id="pseudoM" placeholder="Pseudo">
+                <a href="#"><i><u>oublié?</u></i></a>
+            </div>
+            <span class="triche pass">
+                            <input class="password" id="passwordM" type="password" name="password" placeholder="Mot de passe">
+                            <a href="#"><i><u>oublié?</u></i></a>
+                        </span>
+            <!--<input type="submit" value="OK" class="ok"> -->
+            <a href="#" class="ok" id="okM">OK</a>
+        </form>
+        <p class="paraInscription">Crée un Compte? <a href="inscription.html"><u>Inscrivez Vous</u></a></p>
+    </div>
+    <div class="ligneStylay"></div>
+    <h2 class="titre2Lat">Navigation</h2>
+    <ul class="listeMenuMob">
+        <li>
+            <a href="../index.html"><i>ACCEUIL</i></a>
+        </li>
+        <li>
+            <a href="#"><i>PARI</i></a>
+        </li>
+        <li>
+            <a href="contact.html"><i>CONTACT</i></a>
+        </li>
+        <li>
+            <a href="apropos.html"><i>A PROPOS</i></a>
+        </li>
+    </ul>
+</nav>
+
+
+<nav class="menu">
+    <ul class="container flexStyleH">
+        <li id="menuActif" class="noMob">
+            <a href="../index.html"><i>ACCEUIL</i></a>
+        </li>
+        <li class="noMob">
+            <a href="#"><i>PARI</i></a>
+        </li>
+        <li class="noMob">
+            <a href="contact.html"><i>CONTACT</i></a>
+        </li>
+        <li class="noMob">
+            <a href="apropos.html"><i>A PROPOS</i></a>
+        </li>
+        <li id="responSearch_700px">
+            <form >
+                <input id="responSearch" type="search" placeholder="Recherchez un pari sportif">
+            </form>
+        </li>
+    </ul>
+</nav>
+
+<div class="shadow"></div>
+<div class="modal2">
+    <div id="encadreValidationPari">
+        <form method="post" action="#">
+            <h3>Récapitulatif de votre paris :</h3>
+            <div class="ligneStylay"></div>
+            <div>
+                <p id="selectedMatch">Match : Bordeaux - Dijon</p><br>
+                <p id="pariSelected">Résultat : <span class="colorRed">Bordeaux</span></p><br>
+                <div>
+                    <span>Cote :</span><span id="cote" class="colorRed">1.58</span>
+                    <span class="spanMise">
+                            <label for="miseInput">Votre mise :</label>
+                            <input id="miseInput" type="text">€
+                    </span>
+                </div>
+                <span class="spanMise">Gains possibles :</span>
+                <span id="gainPoentiels" class="colorRed">0.00</span>€
+            </div><br>
+            <div class="ligneStylay"></div>
+            <a href="paris.html">Retour aux paris</a>
+            <input class="submitButton" id="validerParis" type="button" name="validerPari" value="Parier maintenant"><br>
+            <span id="parisValide"></span>
+        </form>
+    </div>
+    <div id="encadreConnection">
+        <h3>Se connecter</h3>
+        <div class="ligneStylay"></div>
+        <input id="loginModal" type="text" name="login" placeholder="Identifiant"><br>
+        <input id="passwordModal" type="text" name="password" placeholder="Mot de passe"><br>
+        <input id="validerConnexion" type="submit" name="connection" value="Se connecter">
+        <p>Pas encore inscrit?</p>
+        <a href="inscription.html">Inscrivez-vous !</a>
+    </div>
+
+</div>
+
+<main class="container principale">
+    <article class="contenu">
+        <div class="logoCompetition"></div>
+        <div class="topParis">
+            <h3>Matchs du Samedi 25 février</h3>
+            <div class="ligneStylay"></div>
+            <ul class="ligneParis colonnePari">
+                <li class="horraire"></li>
+                <li class="infoParis"></li>
+                <li class="vic">1</li>
+                <li class="vic">Nul</li>
+                <li class="vic">2</li>
+                <li class="typePari"></li>
+                <li class="stat"></li>
+            </ul>
+            <ul class="ligneParis">
+                <li class="horraire">8 H</li>
+                <li class="infoParis">
+                    <p><span class="ballon"></span>Football, Ligue 1</p>
+                    <p>Bordeaux - Dijon</p>
+                </li>
+                <li class="vic"><a>1.58</a></li>
+                <li class="vic"><a>3.80</a></li>
+                <li class="vic"><a>5.50</a></li>
+                <li class="typePari">+76</li>
+                <li class="stat">
+                    <a href="#"><img src="../img/stats.png"></a>
+                </li>
+            </ul>
+            <ul class="ligneParis">
+                <li class="horraire">8 H</li>
+                <li class="infoParis">
+                    <p><span class="ballon"></span>Football, Ligue 1</p>
+                    <p>Stade Rennais FC- Paris SG</p>
+                </li>
+                <li class="vic"><a>1.58</a></li>
+                <li class="vic"><a>3.80</a></li>
+                <li class="vic"><a>5.50</a></li>
+                <li class="typePari">+76</li>
+                <li class="stat">
+                    <a href="#"><img src="../img/stats.png"></a>
+                </li>
+            </ul>
+            <ul class="ligneParis">
+                <li class="horraire">8 H</li>
+                <li class="infoParis">
+                    <p><span class="ballon"></span>Football, Ligue 1</p>
+                    <p>AS Nancy-Lorraine - Dijon</p>
+                </li>
+                <li class="vic"><a>1.58</a></li>
+                <li class="vic"><a>3.80</a></li>
+                <li class="vic"><a>5.50</a></li>
+                <li class="typePari">+76</li>
+                <li class="stat">
+                    <a href="#"><img src="../img/stats.png"></a>
+                </li>
+            </ul>
+            <ul class="ligneParis">
+                <li class="horraire">8 H</li>
+                <li class="infoParis">
+                    <p><span class="ballon"></span>Football, Ligue 1</p>
+                    <p>AS Monaco - Montpellier FC</p>
+                </li>
+                <li class="vic"><a>1.58</a></li>
+                <li class="vic"><a>3.80</a></li>
+                <li class="vic"><a>5.50</a></li>
+                <li class="typePari">+76</li>
+                <li class="stat">
+                    <a href="#"><img src="../img/stats.png"></a>
+                </li>
+            </ul>
+            <ul class="ligneParis">
+                <li class="horraire">8 H</li>
+                <li class="infoParis">
+                    <p><span class="ballon"></span>Football, Ligue 1</p>
+                    <p>FC Nantes - FC Lorient</p>
+                </li>
+                <li class="vic"><a>1.58</a></li>
+                <li class="vic"><a>3.80</a></li>
+                <li class="vic"><a>5.50</a></li>
+                <li class="typePari">+76</li>
+                <li class="stat">
+                    <a href="#"><img src="../img/stats.png"></a>
+                </li>
+            </ul>
+
+            <h3>Matchs du Dimanche 26 février</h3>
+            <div class="ligneStylay"></div>
+            <ul class="ligneParis colonnePari">
+                <li class="horraire"></li>
+                <li class="infoParis"></li>
+                <li class="vic">1</li>
+                <li class="vic">Nul</li>
+                <li class="vic">2</li>
+                <li class="typePari"></li>
+                <li class="stat"></li>
+            </ul>
+            <ul class="ligneParis">
+                <li class="horraire">8 H</li>
+                <li class="infoParis">
+                    <p><span class="ballon"></span>Football, Ligue 1</p>
+                    <p>Bordeaux - Dijon</p>
+                </li>
+                <li class="vic"><a>1.58</a></li>
+                <li class="vic"><a>3.80</a></li>
+                <li class="vic"><a>5.50</a></li>
+                <li class="typePari">+76</li>
+                <li class="stat">
+                    <a href="#"><img src="../img/stats.png"></a>
+                </li>
+            </ul>
+            <ul class="ligneParis">
+                <li class="horraire">8 H</li>
+                <li class="infoParis">
+                    <p><span class="ballon"></span>Football, Ligue 1</p>
+                    <p>Bordeaux - Dijon</p>
+                </li>
+                <li class="vic"><a>1.58</a></li>
+                <li class="vic"><a>3.80</a></li>
+                <li class="vic"><a>5.50</a></li>
+                <li class="typePari">+76</li>
+                <li class="stat">
+                    <a href="#"><img src="../img/stats.png"></a>
+                </li>
+            </ul>
+            <ul class="ligneParis">
+                <li class="horraire">8 H</li>
+                <li class="infoParis">
+                    <p><span class="ballon"></span>Football, Ligue 1</p>
+                    <p>Bordeaux - Dijon</p>
+                </li>
+                <li class="vic"><a>1.58</a></li>
+                <li class="vic"><a>3.80</a></li>
+                <li class="vic"><a>5.50</a></li>
+                <li class="typePari">+76</li>
+                <li class="stat">
+                    <a href="#"><img src="../img/stats.png"></a>
+                </li>
+            </ul>
+            <ul class="ligneParis">
+                <li class="horraire">8 H</li>
+                <li class="infoParis">
+                    <p><span class="ballon"></span>Football, Ligue 1</p>
+                    <p>Bordeaux - Dijon</p>
+                </li>
+                <li class="vic"><a>1.58</a></li>
+                <li class="vic"><a>3.80</a></li>
+                <li class="vic"><a>5.50</a></li>
+                <li class="typePari">+76</li>
+                <li class="stat">
+                    <a href="#"><img src="../img/stats.png"></a>
+                </li>
+            </ul>
+            <ul class="ligneParis">
+                <li class="horraire">8 H</li>
+                <li class="infoParis">
+                    <p><span class="ballon"></span>Football, Ligue 1</p>
+                    <p>Bordeaux - Dijon</p>
+                </li>
+                <li class="vic"><a>1.58</a></li>
+                <li class="vic"><a>3.80</a></li>
+                <li class="vic"><a>5.50</a></li>
+                <li class="typePari">+76</li>
+                <li class="stat">
+                    <a href="#"><img src="../img/stats.png"></a>
+                </li>
+            </ul>
+
+        </div>
+    </article>
+
+
+    <aside class="aCote">
+        <h3>Recherchez un pari sportif :</h3>
+        <div class="ligneStylay"></div>
+        <form >
+            <input class="recherche" type="search" placeholder="Indiquez votre requête">
+        </form>
+        <h3>Liste des compétitions</h3>
+        <div class="ligneStylay"></div>
+        <ul>
+            <li><a href="#">Ligue1</a></li>
+            <li><a href="#">Ligue2</a></li>
+            <li><a href="#">Première league</a></li>
+            <li><a href="#">Série A</a></li>
+            <li><a href="#">Liga</a></li>
+            <li><a href="#">Bundesliga</a></li>
+        </ul>
+        <div class="topCombine">
+
+        </div>
+
+        <div class="pubNav"></div>
+        <h3>Parier avec Betclic !</h3>
+        <div class="ligneStylay"></div>
+        <div class="moreInfo">
+            <p>Retrouvez les meilleurs paris sportif à tout moment sur betclic !<br>
+                <a href="#">En savoir plus sur le paris en ligne !</a>
+            </p>
+        </div>
+    </aside>
+
+</main>
+
