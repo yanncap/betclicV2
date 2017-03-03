@@ -12,12 +12,12 @@ public enum DoBetDAO implements DAO<DoBet>{
 
     @Override
     public List<DoBet> findAll() {
-        return null;
+        return DoBet.findAll();
     }
 
     @Override
     public DoBet get(Long id) {
-        return null;
+       return DoBet.findById(id);
     }
 
     @Override
