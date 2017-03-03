@@ -8,6 +8,7 @@ import play.data.validation.Validation;
 import play.mvc.Controller;
 import play.mvc.results.RenderJson;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
@@ -19,10 +20,7 @@ public class ContactController  extends Controller{
         render();
     }
 
-    public static void validationFormulaireContact( @Required @Email String email,
-                                @Required String lastname,
-                                @Required String firstname,
-                                @Required String message){
+    public static void validationFormulaireContact(@Valid UserContact user){
         if (Validation.hasErrors()) {
             apiValidationErrors(Validation.errors());
         }
