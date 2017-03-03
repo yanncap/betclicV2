@@ -54,19 +54,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="images/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="images/android-chrome-192x192.png" sizes="192x192">
-    <meta name="msapplication-square70x70logo" content="images/ms-icons-70x70.png" />
-    <meta name="msapplication-square150x150logo" content="images/ms-icons-150x150.png" />
-    <meta name="msapplication-square310x310logo" content="images/ms-icons-310x310.png" />
     <!--<script src="lib/jquery/jquery-1.12.4.min.js"></script>-->
 </head>
     <body>
@@ -95,7 +82,7 @@
             <li>
                 <ul class="flexStyleH miniMenu">
                     <li>
-                        <a href="@{ContactController.contact()}">Contactez Nous</a>
+                        <a href="@{ContactController.empty()}">Contactez Nous</a>
                     </li>
                     <li>
                         <a href="./">Suivez Nous</a>
@@ -156,7 +143,7 @@
                 <a href="@{BetController.bet()}"><i>PARI</i></a>
             </li>
             <li>
-                <a href="@{ContactController.contact()}"><i>CONTACT</i></a>
+                <a href="@{ContactController.empty()}"><i>CONTACT</i></a>
             </li>
             <li>
                 <a href="@{AproposController.apropos()}"><i>A PROPOS</i></a>
@@ -174,7 +161,7 @@
                 <a href="@{BetController.bet()}"><i>PARI</i></a>
             </li>
             <li class="noMob">
-                <a href="@{ContactController.contact()}"><i>CONTACT</i></a>
+                <a href="@{ContactController.empty()}"><i>CONTACT</i></a>
             </li>
             <li class="noMob">
                 <a href="@{AproposController.apropos()}"><i>A PROPOS</i></a>
