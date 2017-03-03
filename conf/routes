@@ -4,6 +4,11 @@
 
 # Home page
 GET     /                                       Application.index
+GET     /inscription                            InscriptionController.inscription
+GET     /contact                                ContactController.contact
+GET     /bet                                    BetController.bet
+GET     /apropos                                AproposController.apropos
+
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
