@@ -1,11 +1,15 @@
 package dao;
 
+import models.Bet;
+
 import java.util.List;
 
 /**
  * Created by formation on 03/03/17.
  */
-public class BetDAO implements DAO<Bet> {
+public enum BetDAO implements DAO<Bet> {
+
+    INSTANCE;
 
     @Override
     public List<Bet> findAll() {
@@ -13,7 +17,7 @@ public class BetDAO implements DAO<Bet> {
     }
 
     @Override
-    public Bet findById(Long id) {
+    public Bet get(Long id) {
         return null;
     }
 
