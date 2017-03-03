@@ -27,7 +27,7 @@ public enum BetResultService {
 //        return BetResultDAO.INSTANCE.getByStatus(status);
 //    }
 
-    public void create(BetResult betResult){
+    public void save(BetResult betResult){
 
         BetResultDAO.INSTANCE.save(betResult);
     }

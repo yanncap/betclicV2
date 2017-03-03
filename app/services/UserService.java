@@ -19,7 +19,7 @@ public enum UserService {
         return UserDAO.INSTANCE.get(email);
     }
 
-    public User create(User user){
+    public User save(User user){
         User usertmp = UserDAO.INSTANCE.get(user.email);
         if(usertmp == null){
             UserDAO.INSTANCE.save(user);

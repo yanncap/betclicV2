@@ -23,7 +23,7 @@ public enum DoBetService {
         return DoBetDAO.INSTANCE.get(id);
     }
 
-    public void create(DoBet doBet){
+    public void save(DoBet doBet){
         DoBetDAO.INSTANCE.save(doBet);
     }
 

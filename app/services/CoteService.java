@@ -23,7 +23,7 @@ public enum CoteService {
         return CoteDAO.INSTANCE.get(id);
     }
 
-    public void create(Cote cote){
+    public void save(Cote cote){
         CoteDAO.INSTANCE.save(cote);
     }
 

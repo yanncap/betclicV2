@@ -27,7 +27,7 @@ public enum  BetService {
         return BetDAO.INSTANCE.getByNameAndNotClose(name,status);
     }
 
-    public void create(Bet bet){
+    public void save(Bet bet){
        BetDAO.INSTANCE.save(bet);
     }
 

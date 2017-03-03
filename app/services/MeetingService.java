@@ -22,8 +22,9 @@ public enum MeetingService {
         return MeetingDAO.INSTANCE.get(id);
     }
 
-    public void create(Meeting meetting){
+    public void save(Meeting meetting){
         MeetingDAO.INSTANCE.save(meetting);
+
     }
 
     public void delete(Long id){
