@@ -25,7 +25,7 @@ public enum UserDAO implements DAO<User> {
     }
 
     @Override
-    public void save(User type) {
+    public void save(User user) {
 
     }
 
