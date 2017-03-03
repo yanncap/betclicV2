@@ -258,7 +258,7 @@ footer{
     width: 100%;
     height: 140px;
     background: green;
-    background-image: url("../img/home.jpg");
+    background-image: url("/public/images/home.jpg");
     margin: 10px 0;
     border-radius: 10px;
     border: solid 1px #777;
@@ -270,7 +270,7 @@ footer{
     position: relative;
     width: 100%;
     height: 235px;
-    background-image: url("../img/foot4.jpg");
+    background-image: url("/public/images/foot4.jpg");
     margin: 10px 0;
     border-radius: 10px;
     overflow: hidden;
@@ -403,7 +403,7 @@ footer{
     padding-bottom: 0;
     width: 20px;
     height: 20px;
-    background-image: url("../img/ballon.png");
+    background-image: url("/public/images/ballon.png");
     float: left;
 }
 
@@ -500,7 +500,7 @@ footer{
     float: left;
     width: 25px;
     height: 30px;
-    background: #FFF url("../img/goldCup.png");
+    background: #FFF url("/public/images/goldCup.png");
 }
 
 .nomVic{
@@ -524,14 +524,14 @@ footer{
 .pubNav{
     width: 100%;
     height: 200px;
-    background-image: url("../img/promo.jpg");
+    background-image: url("/public/images/promo.jpg");
     border-radius: 10px;
     margin: 10px 0;
 }
 .moreInfo{
     width: 100%;
     height: 150px;
-    background: #FFF url("../img/calepin2.png");
+    background: #FFF url("/public/images/calepin2.png");
     background-repeat: no-repeat;
     border-bottom: solid 1px #AAA;
     margin: 10px 0;
@@ -628,11 +628,11 @@ footer{
 }
 
 #box1{
-    background-image: url("../img/boxbas.jpg");
+    background-image: url("/public/images/boxbas.jpg");
 }
 
 #box2{
-    background-image: url("../img/bottombox.jpg");
+    background-image: url("/public/images/bottombox.jpg");
 }
 
 .ok{

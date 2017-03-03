@@ -90,12 +90,12 @@
 
         <ul class="flexStyleH headSite">
             <li>
-                <a href="../index.html" class="logo"><img src="@{'/public/images/logo.png'}" alt="logo"></a>
+                <a href="@{Application.index()}" class="logo"><img src="@{'/public/images/logo.png'}" alt="logo"></a>
             </li>
             <li>
                 <ul class="flexStyleH miniMenu">
                     <li>
-                        <a href="./">Contactez Nous</a>
+                        <a href="@{ContactController.contact()}">Contactez Nous</a>
                     </li>
                     <li>
                         <a href="./">Suivez Nous</a>
@@ -128,6 +128,65 @@
         </div>
     </header>
 
+    <div class="shadow"></div>
+    <nav class="menuLateral">
+        <h2 class="titre2Lat" id="titreCoo">Connexion</h2>
+        <div class="liForm">
+            <form class="formulaire">
+                <div class="triche">
+                    <input class="pseudo" type="text" name="Pseudo" id="pseudoM" placeholder="Pseudo">
+                    <a href="#"><i><u>oublié?</u></i></a>
+                </div>
+                <span class="triche pass">
+                            <input class="password" id="passwordM" type="password" name="password" placeholder="Mot de passe">
+                            <a href="#"><i><u>oublié?</u></i></a>
+                        </span>
+                <!--<input type="submit" value="OK" class="ok"> -->
+                <a href="#" class="ok" id="okM">OK</a>
+            </form>
+            <p class="paraInscription">Crée un Compte? <a href="./html/inscription.html"><u>Inscrivez Vous</u></a></p>
+        </div>
+        <div class="ligneStylay"></div>
+        <h2 class="titre2Lat">Navigation</h2>
+        <ul class="listeMenuMob">
+            <li>
+                <a href="@{Application.index()}"><i>ACCEUIL</i></a>
+            </li>
+            <li>
+                <a href="@{BetController.bet()}"><i>PARI</i></a>
+            </li>
+            <li>
+                <a href="@{ContactController.contact()}"><i>CONTACT</i></a>
+            </li>
+            <li>
+                <a href="@{AproposController.apropos()}"><i>A PROPOS</i></a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <nav class="menu">
+        <ul class="container flexStyleH">
+            <li id="menuActif" class="noMob">
+                <a href="@{Application.index()}"><i>ACCEUIL</i></a>
+            </li>
+            <li class="noMob">
+                <a href="@{BetController.bet()}"><i>PARI</i></a>
+            </li>
+            <li class="noMob">
+                <a href="@{ContactController.contact()}"><i>CONTACT</i></a>
+            </li>
+            <li class="noMob">
+                <a href="@{AproposController.apropos()}"><i>A PROPOS</i></a>
+            </li>
+            <li id="responSearch_700px">
+                <form action="html/paris.html">
+                    <input id="responSearch" type="search" placeholder="Recherchez un pari sportif">
+                </form>
+            </li>
+        </ul>
+    </nav>
+
         #{doLayout /}
 
     <footer>
@@ -156,8 +215,11 @@
             <div class="btnDicoMob"><i class="material-icons handCursor">vertical_align_bottom</i></div>
         </section>
     </footer>
-        <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        <script src="@{'/public/javascripts/main.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    <script
+            src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+            crossorigin="anonymous"></script>
+    <script src="@{'/public/javascripts/main.js'}" type="text/javascript" charset="${_response_encoding}"></script>
     #{get 'moreScripts' /}
     </body>
 </html>
