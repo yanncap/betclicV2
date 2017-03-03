@@ -1,0 +1,32 @@
+.pargpad p{
+    Line-Height: 20pt;
+    margin: 10px;
+}
+
+li{
+    margin-left: 30px;
+    Line-Height: 15pt;
+}
+
+.imgapropos{
+    border-radius: 10px;
+    background-image: url("/public/images/happy_2016.jpg");
+    width: 700px;
+    height: 235px;
+    margin-left: calc(50% - 350px);
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.imgmaps{
+    border-radius: 10px;
+
+    width: 700px;
+    height: 535px;
+    margin-left: calc(50% - 350px);
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
