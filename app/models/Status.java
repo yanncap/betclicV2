@@ -5,7 +5,7 @@ package models;
  */
 public enum Status {
 
-    EN_ATTENTE,
-    EN_COURS,
-    TERMINE;
+    WAIT,
+    IN_PROGRESS,
+    CLOSE;
 }

@@ -21,22 +21,14 @@ public enum DoBetDAO implements DAO<DoBet>{
     }
 
     @Override
-    public void save(DoBet type) {
-
+    public void save(DoBet doBet) {
+        doBet.save();
     }
 
-    @Override
-    public void update(DoBet type) {
-
-    }
 
     @Override
     public void delete(Long id) {
-
+        DoBet.delete("id = ?1", id);
     }
 
-    @Override
-    public void delete(DoBet type) {
-
-    }
 }

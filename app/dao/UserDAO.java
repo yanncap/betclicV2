@@ -26,21 +26,12 @@ public enum UserDAO implements DAO<User> {
 
     @Override
     public void save(User user) {
-
+        user.save();
     }
 
-    @Override
-    public void update(User type) {
-
-    }
 
     @Override
     public void delete(Long id) {
-
-    }
-
-    @Override
-    public void delete(User type) {
-
+        User.delete("id=?1", id);
     }
 }

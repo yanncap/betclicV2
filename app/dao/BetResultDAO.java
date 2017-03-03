@@ -17,26 +17,17 @@ public enum BetResultDAO implements DAO<BetResult>{
 
     @Override
     public BetResult get(Long id) {
-        return null;
+        return BetResult.find("id = ?1", id).first();
     }
-     @Override
-     public void save(BetResult type) {
-
-     }
 
     @Override
-    public void update(BetResult type) {
-
+    public void save(BetResult betResult) {
+        betResult.save();
     }
+
 
     @Override
     public void delete(Long id) {
-
+        BetResult.delete("id = ?1", id);
     }
-
-    @Override
-    public void delete(BetResult type) {
-
-    }
-
 }

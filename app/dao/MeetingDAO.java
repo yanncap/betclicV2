@@ -12,31 +12,23 @@ public enum MeetingDAO implements DAO<Meetting> {
 
     @Override
     public List<Meetting> findAll() {
-        return null;
+        return Meetting.findAll();
     }
 
     @Override
     public Meetting get(Long id) {
-        return null;
+        return Meetting.find("id = ?1", id).first();
     }
 
     @Override
-    public void save(Meetting type) {
-
+    public void save(Meetting meeting) {
+        meeting.save();
     }
 
-    @Override
-    public void update(Meetting type) {
-
-    }
 
     @Override
     public void delete(Long id) {
-
+        Meetting.delete("id = ?1", id);
     }
 
-    @Override
-    public void delete(Meetting type) {
-
-    }
 }
