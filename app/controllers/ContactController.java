@@ -1,6 +1,7 @@
 package controllers;
 
 import com.google.gson.JsonObject;
+import models.UserContact;
 import play.data.validation.Email;
 import play.data.validation.Error;
 import play.data.validation.Required;
