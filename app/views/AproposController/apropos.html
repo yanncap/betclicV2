@@ -1,10 +1,147 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+#{extends 'main.html' /}
+#{set title:'Home' /}
 
-</body>
-</html>
+<header class="container">
+
+    <ul class="flexStyleH headSite">
+        <li>
+            <a href="../index.html" class="logo"><img src="../img/logo.png" alt="logo"></a>
+        </li>
+        <li>
+            <ul class="flexStyleH miniMenu">
+                <li>
+                    <a href="./">Contactez Nous</a>
+                </li>
+                <li>
+                    <a href="./">Suivez Nous</a>
+                </li>
+                <li>
+                    <a href="./">Mobile</a>
+                </li>
+            </ul>
+        </li>
+        <li class="liForm">
+            <form class="formulaire">
+                <div class="triche">
+                    <input class="pseudo" id="pseudoS" type="text" name="Pseudo" placeholder="Pseudo">
+                    <a href="#" class="lienForm"><i><u>oublié?</u></i></a>
+                </div>
+                <span class="triche pass">
+                        <input class="password" id="passwordS" type="password" name="password" placeholder="Mot de passe">
+                        <a href="#" class="lienForm"><i><u>oublié?</u></i></a>
+                    </span>
+                <!--<input type="submit" value="OK" class="ok"> -->
+                <a href="#" class="ok" id="okS">OK</a>
+            </form>
+            <p class="paraInscription">Crée un Compte? <a href="inscription.html" class="lienForm"><u>Inscrivez Vous</u></a></p>
+
+        </li>
+
+    </ul>
+    <div class="menuMobile">
+        <a href="#" class="menuMBouton"> <i class="material-icons menuClic">menu</i></a>
+    </div>
+</header>
+
+<div class="shadow"></div>
+<nav class="menuLateral">
+    <h2 class="titre2Lat" id="titreCoo">Connexion</h2>
+    <div class="liForm">
+        <form class="formulaire">
+            <div class="triche">
+                <input class="pseudo" type="text" name="Pseudo" id="pseudoM" placeholder="Pseudo">
+                <a href="#"><i><u>oublié?</u></i></a>
+            </div>
+            <span class="triche pass">
+                            <input class="password" id="passwordM" type="password" name="password" placeholder="Mot de passe">
+                            <a href="#"><i><u>oublié?</u></i></a>
+                        </span>
+            <!--<input type="submit" value="OK" class="ok"> -->
+            <a href="#" class="ok" id="okM">OK</a>
+        </form>
+        <p class="paraInscription">Crée un Compte? <a href=".inscription.html"><u>Inscrivez Vous</u></a></p>
+    </div>
+    <div class="ligneStylay"></div>
+    <h2 class="titre2Lat">Navigation</h2>
+    <ul class="listeMenuMob">
+        <li>
+            <a href="../index.html"><i>ACCEUIL</i></a>
+        </li>
+        <li>
+            <a href="paris.html"><i>PARI</i></a>
+        </li>
+        <li>
+            <a href="contact.html"><i>CONTACT</i></a>
+        </li>
+        <li>
+            <a href="#"><i>A PROPOS</i></a>
+        </li>
+    </ul>
+</nav>
+
+
+<nav class="menu">
+    <ul class="container flexStyleH">
+        <li id="menuActif" class="noMob">
+            <a href="../index.html"><i>ACCEUIL</i></a>
+        </li>
+        <li class="noMob">
+            <a href="paris.html"><i>PARI</i></a>
+        </li>
+        <li class="noMob">
+            <a href="contact.html"><i>CONTACT</i></a>
+        </li>
+        <li class="noMob">
+            <a href="#"><i>A PROPOS</i></a>
+        </li>
+        <li id="responSearch_700px">
+            <form action="paris.html">
+                <input id="responSearch" type="search" placeholder="Recherchez un pari sportif">
+            </form>
+        </li>
+    </ul>
+</nav>
+
+
+<main class="container">
+
+    <H1>À propos de nous</H1>
+    <div class="ligneStylay"></div>
+
+    <div class="imgapropos"> </div>
+
+    <div class="pargpad">
+        <p>
+            <strong> Notre mission :</strong> C'est plutôt simple. Nous sommes une grande famille heureuse et nous nous concentrons sur ce que nous aimons faire.
+            Un pari sportif consiste à miser de l'argent sur un évènement lors d'une rencontre sportive.
+            Il existe de nombreux types de paris, dont les plus simples consistent à parier sur la victoire d'une équipe précise. Chaque pari a une cote et
+            c'est elle qui permet de connaître à l'avance, en fonction de la somme misée, le montant gagné si l'évènement se produit.
+        </p>
+
+        <p>
+            En notation décimale, si l'on mise 10 € sur l'équipe A dont la cote est de 1,6 par exemple :
+        <ul>
+            <li>Si A gagne, la somme récupérée est de 16€, soit un gain de + 60 % ; </li>
+            <li> Si A ne gagne pas, la somme misée est perdue, soit 10€.</li>
+        </ul>
+        </p>
+
+        <p>
+            Les paris se font en général chez des bookmakers qui sont des organismes autorisés à proposer aux joueurs de parier. Les paris sportifs étaient interdits en France jusqu'au 10 juin 2010, la veille de l'ouverture de la Coupe du monde de football.
+            À compter de cette date, l'ARJEL (Autorité de Régulation des Jeux En Ligne) a été créée à la suite de la loi relative à l'ouverture à la concurrence des jeux d'argent et de hasard en ligne1. Elle est chargée de réguler le marché et distribue des agréments officiels aux opérateurs2.
+            Pour plus d'informations voir ce <a href="https://fr.wikipedia.org/wiki/Pari_sportif" alt="lien wikipedia"> lien </a>.
+        </p>
+    </div>
+
+
+    <div class="pargpad">
+        <p>
+            <strong> Le plan d’accès pour venir nous voir :</strong>
+        </p>
+        <div class="imgmaps">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2592.5366723280104!2d1.108075930570604!3d49.47436866968357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e0dc5178b1dc17%3A0x68c4e44a70fc765e!2s15+All%C3%A9e+Robert+Lemasson%2C+76230+Bois-Guillaume!5e0!3m2!1sfr!2sfr!4v1486549494601" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+
+</main>
