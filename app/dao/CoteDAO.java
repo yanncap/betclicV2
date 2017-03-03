@@ -22,22 +22,14 @@ public enum CoteDAO implements DAO<Cote> {
     }
 
     @Override
-    public void save(Cote type) throws HibernateException {
+    public void save(Cote type){
         type.save();
     }
 
-    @Override
-    public void update(Cote type) {
-        //type.edit();
-    }
 
     @Override
     public void delete(Long id) {
         Cote.delete("id = ?1", id);
     }
 
-    @Override
-    public void delete(Cote type) {
-        //Cote.de
-    }
 }
