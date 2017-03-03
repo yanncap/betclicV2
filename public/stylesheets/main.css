@@ -1,0 +1,709 @@
+/* ==========================================================================
+  GLOBAL
+========================================================================== */
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background-color: #fff;
+    font-family: "Helvetica Neue","Helvetica","Arial",'sans-serif';
+    color: #333;
+    font-size: 100%;
+    font-smoothing: antialiased;
+}/*
+    overflow-x: hidden;
+    line-height: 1.5;
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: box;
+    display: flex;
+    flex-direction: column;
+}*/
+
+.clearfix:after, .clearfix:before{
+    display: table;
+    content: " ";
+    clear: both;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1{
+    margin-top: 0;
+    font-size: 2.5em;
+}
+
+p{
+    margin: 0;
+}
+
+li{
+    list-style-type: none;
+}
+
+.img{
+    display: block;
+    background-color: #333;
+}
+
+.list-unstyled{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.container{
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.content-title{
+    display: block;
+    font-size: 1.2em;
+    padding-bottom: 0.5em;
+}
+
+/*CSS PERSO-------------------------------------------------------------------------------------------*/
+
+.principale{
+    display: flex;
+    flex-direction: row;
+}
+
+.contenu{
+    width: 700px;
+}
+
+.aCote{
+    margin-left: 10px;
+    width: 220px;
+}
+
+footer{
+    width: 100%;
+    background: #555;
+}
+
+.titre3{
+    margin: 5px 0 0 0;
+    font-size: 100%;
+}
+
+
+/*CSS CLASS PERSO-------------------------------------------------------------------------------------*/
+
+
+
+.flexStyleH{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.risqueJouer{
+    height: 60px;
+    width: 100%;
+    background: black;
+    color: white;
+}
+
+.risqueJouer ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.risqueLi{
+    margin-top: 10px;
+    font-size: 75%;
+}
+
+.risqueTitre{
+    margin-top: 10px;
+    font-size: 60%;
+    text-align: center;
+}
+
+.risqueTitre H2,.risqueTitre p{
+    display: inline;
+}
+
+.logo{
+    margin-top: 10px;
+    display: inline-block;
+    height: 51px;
+    width: 150px;
+}
+
+.forward{
+    font-size: 30px;
+}
+
+.headSite{
+    justify-content: space-between;
+}
+
+.miniMenu {
+    margin-top: 20px;
+    font-size: 80%;
+    font-weight: bold;
+}
+
+.miniMenu a{
+
+    color: #999;
+}
+
+.miniMenu li{
+    border-right: solid 1px #333;
+    margin-right: 4px;
+    padding-right: 4px;
+}
+
+.miniMenu li:last-child{
+    border-right: none;
+}
+
+.liForm{
+    width: 200px;
+}
+
+.paraInscription{
+    margin-top: 2px;
+    font-size: 80%;
+    text-align: right;
+}
+
+.lienform{
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.formulaire input{
+    border: none;
+}
+
+.formulaire a{
+    color: #333;
+    font-size: 75%;
+    margin-right: 5px;
+}
+
+.triche{
+    border: solid 1px #555;
+    margin: 8px 0 5px 0;
+}
+
+.pass{
+
+}
+
+.menuMobile{
+    display: none ;
+    position: relative;
+    height: 0;
+}
+
+.menuMBouton{
+    position : absolute;
+    top: -50px;
+    color: black;
+}
+
+.menuClic{
+    font-size: 32px;
+}
+
+.menu{
+    width: 100%;
+    background: #EEE;
+    font-weight: 600;
+}
+.menu a{
+    color: #444;
+}
+
+.menu li{
+    height: 26px;
+    padding: 3px 0 0 0;
+}
+
+.menu li:after{
+    content: "|";
+    margin: 0 5px;
+}
+.menu li:last-child:after{
+    content: normal;
+}
+
+.pub{
+    width: 100%;
+    height: 140px;
+    background: green;
+    background-image: url("../img/home.jpg");
+    margin: 10px 0;
+    border-radius: 10px;
+    border: solid 1px #777;
+}
+
+
+/* Caroussel----------------------------------------------------------------------------*/
+.caroussel{
+    position: relative;
+    width: 100%;
+    height: 235px;
+    background-image: url("../img/foot4.jpg");
+    margin: 10px 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.fondCarou{
+    position: absolute;
+    width: 3000px;
+}
+
+.itemCarou{
+    display: inline-block;
+    width: 700px;
+    overflow: hidden;
+}
+
+.lienCarou{
+    position: absolute;
+    width: 700px;
+    height: 75px;
+    background: rgba(0,0,0,0.5);
+    top: 160px;
+    padding: 10px 0 0 20px;
+}
+
+.titreItem1{
+    font-size: 120%;
+    color: red;
+    font-weight: bold;
+}
+
+.titreItem2{
+    font-size: 150%;
+    color: white;
+    font-weight: bold;
+}
+
+/* top paris------------------------------------------------------------------------------*/
+
+.topParis{
+    width: 100%;
+    margin: 30px 0;
+}
+
+.topParis h2{
+    color: #444;
+    font-size: 100%;
+    display: inline;
+    padding: 3px 5px;
+    border: solid 1px #555;
+}
+
+.topParis nav{
+    border-bottom: solid 2px #444;
+    padding-bottom: 3px;
+}
+
+
+.topParis ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 30px 5px 0;
+    border-top: solid 1px #CCC;
+}
+
+.horraire{
+    width: 50px;
+    height: 24px;
+    border-radius: 3px;
+    border: solid 1px #AAA;
+    text-align: center;
+    padding-top: 3px;
+
+}
+
+.vic{
+    color: red;
+    width: 50px;
+    height: 24px;
+    background: #CCC;
+    box-shadow: 1px 1px 1px #444;
+    border-radius: 3px;
+    text-align: center;
+    padding-top: 4px;
+    font-size: 80%;
+}
+
+.vic:hover{
+    cursor: pointer;
+}
+
+.typePari{
+    color: #EEE;
+    width: 26px;
+    height: 16px;
+    background: #333;
+    font-size: 66%;
+    text-align: center;
+    padding-top: 2px;
+    margin-top: 4px;
+    border-radius: 3px;
+}
+
+.stat{
+    padding-top: 4px;
+    width: 60px;
+}
+
+.infoParis p:nth-child(1){
+    color: #bbb;
+    font-size: 80%;
+    margin-bottom: 5px;
+}
+
+.ligneParis li p:nth-child(2){
+    color: #333;
+    font-size: 90%;
+}
+
+.colonnePari li{
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    color: black !important;
+}
+
+.ballon{
+    display: inline-block;
+    padding-bottom: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/ballon.png");
+    float: left;
+}
+
+.infoParis{
+    width: 300px;
+}
+
+.ligneStylay{
+    margin: 1px 0;
+    height: 3px;
+    background-image:linear-gradient(to left, white, #333);
+}
+
+.nowIn{
+    width: 100%;
+    margin: 10px 0;
+}
+
+.nowInUl{
+    justify-content: space-between;
+}
+
+.nowInUl li{
+    width: 345px;
+    height: 159px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.megaMenu{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px 0;
+    border-bottom: solid 2px black;
+}
+
+.megaMenu a{
+    color: white;
+}
+
+.megaMenu a:visited{
+    color: white;
+}
+
+.megaMenu li:after{
+    content: "|";
+    padding: 0 5px;
+    color: white;
+}
+.megaMenu li:last-child:after{
+    content: normal;
+}
+
+.titreDico{
+    color: white;
+    padding-top: 20px;
+}
+
+.dico{
+    padding: 20px 16px;
+    color: white;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.temp{
+    height: 16px;
+    width: 26px;
+    background: blue;
+}
+/*CSS NAV--------------------*/
+
+.recherche{
+    display: inline-block;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.topCombine{
+    margin-top: 15px;
+}
+
+.topCombine li{
+    border-top: solid 1px #555;
+    width: 100%;
+    padding: 5px;
+    margin-top: 2px;
+}
+
+.medaille{
+    display: inline-block;
+    float: left;
+    width: 25px;
+    height: 30px;
+    background: #FFF url("../img/goldCup.png");
+}
+
+.nomVic{
+    color: #0000FF;
+}
+
+.gain{
+    color: #FF0000;
+}
+
+.spanDetail span:nth-child(2){
+    float: right;
+}
+
+.spanDetail p:nth-child(2){
+    border-top: solid 1px #CCC;
+    padding: 3px 0;
+    font-size: 70%;
+}
+
+.pubNav{
+    width: 100%;
+    height: 200px;
+    background-image: url("../img/promo.jpg");
+    border-radius: 10px;
+    margin: 10px 0;
+}
+.moreInfo{
+    width: 100%;
+    height: 150px;
+    background: #FFF url("../img/calepin2.png");
+    background-repeat: no-repeat;
+    border-bottom: solid 1px #AAA;
+    margin: 10px 0;
+}
+
+.moreInfo p{
+    margin-top: 10px;
+    float: right;
+    width: 50%;
+    text-align: right;
+    font-size: 90%;
+}
+
+.moreInfo a{
+    font-size: 80%;
+    color: #AA0000;
+    font-weight: bold;
+}
+
+/* CSS menu lateral----------------------------------------------------------------------------------*/
+
+.shadow{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+}
+
+.menuLateral{
+    display: none;
+    position: fixed;
+    width: 220px;
+    background: white;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    margin-top: 50px;
+    margin-left: calc(50% - 110px);
+    box-shadow: 5px 5px 10px #000;
+}
+
+.titre2Lat{
+    text-align: center;
+    width: 100%;
+}
+
+.btnDicoMob{
+    display: none;
+    width: 40px;
+    margin-left: calc(50% - 20px);
+}
+
+.btnDicoMob i{
+    font-size: 40px;
+    color: white;
+}
+
+.listeMenuMob li{
+    width: 100px;
+    margin: 20px 50px;
+    text-align: center;
+}
+
+.listeMenuMob a{
+    color: black;
+    font-weight: bold;
+}
+
+/*CSS ID PERSO---------------------------------------------------------------------------------------*/
+
+
+#menuActif a{
+    padding: 5px;
+    background: #333;
+    color: #DDD;
+}
+
+.pseudo{
+    width: calc(100% - 53px);
+}
+
+.password{
+    width: calc(100% - 100px);
+}
+
+#pariActif{
+    background: #444;
+    color: #ccc;
+    border-color: #444;
+}
+
+#box1{
+    background-image: url("../img/boxbas.jpg");
+}
+
+#box2{
+    background-image: url("../img/bottombox.jpg");
+}
+
+.ok{
+    display: inline-block;
+    float: right;
+    width: 40px;
+    height: 20px;
+    border-radius: 3px;
+    background: #666;
+    color: #DDD;
+    font-size: 80%;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 2px;
+}
+
+#responSearch{
+    display: none;
+    width: 250px;
+}
+
+.handCursor{
+    cursor: pointer;
+}
+
+/* MEDIA QUERIES------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 960px){
+    aside{display: none;}
+    main{justify-content: center;}
+    .risqueLi{display: none;}
+    .risqueJouer ul{justify-content: center;}
+    #responSearch{display: inline;}
+}
+
+
+@media only screen and (max-width: 730px){
+    .contenu{width: 100%;}
+    .risqueJouer{height: auto;}
+    .nowInUl,.headSite{justify-content: center;}
+    .pub,.headSite li:nth-child(2),.headSite li:nth-child(3){display: none;}
+    #responSearch_700px{width: 100%}
+    .menu ul{justify-content: space-between;}
+    #responSearch{width: 100%;}
+    .ligneParis{flex-wrap: wrap;}
+    .infoParis{width: calc(100% - 60px);}
+    .topParis ul{justify-content: space-around;}
+    .topParis nav{display: flex;flex-wrap: wrap;justify-content: center;}
+    .menuMobile{display: block;}
+    .btnDicoMob{display: block;}
+    .dico{display: none;}
+    .noMob{display: none;}
+}
+
+
+/* CSS inscription.html------------------------------------------------------------------------------------------------*/
+
+.forInscrip label{
+    display: inline-block;
+    width: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

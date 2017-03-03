@@ -1,13 +1,74 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js ie"><![endif]-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
 
-<html>
-    <head>
-        <title>#{get 'title' /}</title>
-        <meta charset="${_response_encoding}">
-        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
-        #{get 'moreStyles' /}
-        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
-    </head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <title>#{get 'title' /}</title>
+    <meta name="apple-mobile-web-app-title" content="Presentation of my company | My Site">
+    <meta name="application-name" content="Presentation of my company | My Site">
+    <meta property="og:title" content="Presentation of my company | My Site">
+    <meta property="twitter:title" content="Presentation of my company | My Site">
+
+    <meta name="description" content="Description about my page in 160 characters">
+    <meta name="msapplication-tooltip" content="Description about my page in 160 characters">
+    <meta property="og:description" content="Description about my page in 160 characters">
+    <meta property="twitter:description" content="Description about my page in 160 characters">
+
+    <link rel="image_src" href="http://www.mysite.com/images/my-site-presentation.png">
+    <meta property="twitter:image" content="http://www.mysite.com/images/my-site-presentation.png">
+    <meta property="og:image" content="http://www.mysite.com/images/my-site-presentation.png">
+
+    <meta property="og:url" content="http://www.mysite.com/about-us">
+    <meta property="twitter:url" content="http://www.mysite.com/about-us">
+    <link rel="canonical" href="http://www.mysite.com/about-us">
+
+    <meta property="og:article:published_time" content="16/08/2016">
+    <meta name="date" content="16/08/2016">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="My site">
+
+    <meta property="og:article:publisher" content="https://www.facebook.com/My-Company">
+    <meta property="twitter:site" content="@MyCompnay">
+    <meta property="twitter:creator" content="@MyCompnay">
+    <meta name="author" content="http://www.mysite.com">
+
+    <meta property="twitter:card" content="photo">
+
+    <meta name="geo.placename" content="Rouen">
+    <meta name="geo.region" content="fr">
+
+    <meta name="copyright" content="©2016 My site | all rights reserved">
+
+    <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="images/android-chrome-192x192.png" sizes="192x192">
+    <meta name="msapplication-square70x70logo" content="images/ms-icons-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="images/ms-icons-150x150.png" />
+    <meta name="msapplication-square310x310logo" content="images/ms-icons-310x310.png" />
+    <!--<script src="lib/jquery/jquery-1.12.4.min.js"></script>-->
+</head>
     <body>
         #{doLayout /}
         
