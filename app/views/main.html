@@ -70,9 +70,51 @@
     <!--<script src="lib/jquery/jquery-1.12.4.min.js"></script>-->
 </head>
     <body>
+    <div class="risqueJouer">
+        <ul class="container">
+            <li class="risqueLi">
+                <p>Lundi 23 Jan 2017 <br> 09:21</p>
+            </li>
+            <li class="risqueTitre">
+                <h2>FAMILLE, VIE SOCIALE,SANT&Eacute; FINANCI&Egrave;RE. ETES-VOUS PR&Ecirc;T &Agrave; TOUT MISER?<br>
+                    POUR &Ecirc;TRE AID&Eacute;,APPELEZ LE 09-74-75-13-13 </h2>
+                <p>(APPEL NON SURTAX&Eacute;)</p>
+            </li>
+            <li class="risqueLi">
+                <p>LES JEUX D'ARGENT <br>ET DE HASARD SONT <br>INTERDITS AUX MINEURS</p>
+            </li>
+        </ul>
+    </div>
         #{doLayout /}
-        
+
+    <footer>
+        <section>
+            <ul class="megaMenu container">
+                <li><a href="./">Aide</a></li>
+                <li><a href="./">Ambassadeur & Partenaire</a></li>
+                <li><a href="./">Contact</a></li>
+                <li><a href="./">&Agrave; Propos de Betclic</a></li>
+                <li><a href="./">Recrutement</a></li>
+                <li><a href="./">Conditions Général d'utilisation</a></li>
+                <li><a href="./">Respect de la Vie Privée et Cookies</a></li>
+                <li><a href="./">Jeu responsable</a></li>
+                <li><a href="./">Bonnes pratiques</a></li>
+                <li><a href="./">Presse</a></li>
+                <li><a href="./">Affiliation</a></li>
+            </ul>
+
+            <H2 class="container titreDico">BetClic : le N°1 des paris Sportif</H2>
+            <p class="container dico">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
+                Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla
+                ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles,
+                mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960
+                grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment,
+                par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+            <div class="btnDicoMob"><i class="material-icons handCursor">vertical_align_bottom</i></div>
+        </section>
+    </footer>
         <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        #{get 'moreScripts' /}
+        <script src="@{'/public/javascripts/main.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+    #{get 'moreScripts' /}
     </body>
 </html>

@@ -62,7 +62,7 @@ function fausseConnection(choix){
 function initCarou(){
     $(".fondCarou").css("width", NbrItemCarou*700+"px");
     for (var i=0 ; i<NbrItemCarou ; i++){
-        $(".fondCarou").append("<div class='itemCarou' id='itemCarou"+i+"'><img src='img/"+ tabLien[i] +"'></div>");
+        $(".fondCarou").append("<div class='itemCarou' id='itemCarou"+i+"'><img src='images/"+ tabLien[i] +"'></div>");
         $('#itemCarou'+i).append("<a href='html/paris.html'><div class='lienCarou'><h6 class='titreItem1'>"+ tabTitre1[i] +"</h6><h5 class='titreItem2'>"+ tabTitre2[i] +"</h5></div></a>");
     }
 }
