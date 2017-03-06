@@ -29,7 +29,9 @@ public class ContactController  extends Controller{
         if (Validation.hasErrors()) {
             params.flash();
             Validation.keep();
+            System.out.println("Je suis la 1");
             contact();
+            System.out.println("Je suis la 2");
         }
         UserContactService.INSTANCE.save(userContact);
         Application.index();
