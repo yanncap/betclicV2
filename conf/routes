@@ -9,6 +9,7 @@ GET     /contact                                ContactController.contact
 GET     /bet                                    BetController.bet
 GET     /apropos                                AproposController.apropos
 GET     /apropos                                ContactController.saveusercontact
+POST    /apropos                                ContactController.saveusercontact
 
 
 # Ignore favicon requests
