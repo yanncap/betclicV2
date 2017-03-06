@@ -16,7 +16,7 @@
         Veuillez renseigner tout les champs suivi d'une *.
     </p>
     <br>
-    <form class="forInscrip" id="Verif" name="Verif" action="@{CompteController.creerCompteUser()}" method="post">
+    <form class="forInscrip" id="Verif" name="Verif" action="@{controllers.InscriptionController.creerUser()}" method="post">
         <fieldset>
             <legend class="DPinscription"> DONNÉES PERSONNELLES</legend>
             <label for="prenom"> Prénom <span class="required">*</span> </label>

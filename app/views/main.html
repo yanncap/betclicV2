@@ -96,32 +96,27 @@
             #{if controllers.secure.BetClicSecure.Security.isConnected() && connectedUser}
                 <li>
                     <p>Bienvenue ${connectedUser.firstname} ${connectedUser.lastname} </p>
+                    <p><a href="@{CompteController.compte()}">Mon compte</a></p>
                     <p><a href="@{secure.BetClicSecure.logout()}">Se déconnecter</a></p>
                 </li>
             #{/if}
 
             #{else}
             <li class="liForm">
-                <!-- <form class="formulaire"> -->
+
                 <div class="formulaire">
                     #{form @secure.BetClicSecure.authenticate()}
                         <div class="triche">
                             <input class="pseudo" id="pseudoS" type="text" name="username" placeholder="Pseudo" required>
                             <a href="#" class="lienForm"><i><u>oublié?</u></i></a>
-                            #{ifError 'client.prenom'} #{error 'client.prenom' /} #{/ifError}
                         </div>
                         <span class="triche pass">
                         <input class="password" id="passwordS" type="password" name="password" placeholder="Mot de passe" required>
                         <a href="#" class="lienForm"><i><u>oublié?</u></i></a>
-                            #{ifError 'user.password'} #{error 'user.password' /} #{/ifError}
                          </span>
-                        <!--<input type="submit" value="OK" class="ok"> -->
                         <input type="submit" value="OK" id=okS" class="ok">
-                        <!-- <a href="#" class="ok" id="okS">OK</a> -->
                     #{/form}
                 </div>
-                <!--  </form> -->
-
                 <p class="paraInscription">Crée un Compte? <a href="@{InscriptionController.inscription()}" class="lienForm"><u>Inscrivez Vous</u></a></p>
 
             </li>

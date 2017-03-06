@@ -1,5 +1,6 @@
 package controllers;
 
+import controllers.secure.BetClicSecure;
 import models.User;
 import play.data.validation.Valid;
 import play.data.validation.Validation;
@@ -7,17 +8,20 @@ import play.mvc.Controller;
 
 import java.util.List;
 
+import static controllers.secure.BetClicSecure.authenticate;
+
+
 /**
  * Created by choural1 on 03/03/17.
  */
-public class InscriptionController extends Controller {
+public class InscriptionController extends LoggedController {
 
     public static void inscription(){
         render();
     }
 
     public static void creerUser(@Valid User user) {
-        System.out.println(user.email);
+
         if (Validation.hasErrors()) {
             params.flash();
             Validation.keep();
@@ -25,7 +29,13 @@ public class InscriptionController extends Controller {
         }
 
         user.save();
-        Application.index();
+
+        try {
+            BetClicSecure.authenticate(user.email,user.password,true);
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+
     }
 
     public static void editUser(Long id) {

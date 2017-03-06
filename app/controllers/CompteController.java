@@ -8,9 +8,17 @@ import play.mvc.Controller;
 /**
  * Created by choural1 on 06/03/17.
  */
-public class CompteController extends Controller{
+public class CompteController extends LoggedController{
+
     public static void compte (){
-        render();
+
+        if(getConnectedUser()==null){
+            Application.index();
+        }else{
+            User user = getConnectedUser();
+                    render(user);
+        }
+
     }
 
 

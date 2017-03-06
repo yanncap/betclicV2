@@ -3,12 +3,10 @@ package controllers;
 import controllers.secure.BetClicSecure;
 import models.User;
 import play.Logger;
-import play.mvc.After;
 import play.mvc.Before;
 import play.mvc.Controller;
 
 public class LoggedController extends Controller {
-
     @Before
     private void before() {
         Logger.info(request.url);
@@ -18,9 +16,8 @@ public class LoggedController extends Controller {
         }
     }
 
-    @After
-    private void after() {
-        Logger.debug("fin de la request");
+    protected static User getConnectedUser(){
+        return (User)renderArgs.get("connectedUser");
     }
 
 }

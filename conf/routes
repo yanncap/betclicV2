@@ -4,8 +4,9 @@
 # Import Secure routes
 #*      /                module:secure
 
-POST        /login          secure.BetClicSecure.authenticate
-GET         /logout         secure.BetClicSecure.logout
+POST      /login                                secure.BetClicSecure.authenticate
+GET       /login                                secure.BetClicSecure.authenticate
+GET       /logout                               secure.BetClicSecure.logout
 
 
 # Home page
@@ -18,6 +19,8 @@ GET     /contact                                ContactController.saveusercontac
 POST    /contact                                ContactController.saveUserContact
 GET     /compte                                 CompteController.compte
 POST    /compte                                 CompteController.compte
+POST    /inscription                            InscriptionController.creerUser
+
 
 
 # Ignore favicon requests

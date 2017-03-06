@@ -14,13 +14,13 @@
     <form class="forCompte" method="post" >
 
         <label for="nom">Nom : </label>
-        <input class="statut" id="nom" disabled="disabled" name="nom" type="text" value="${user ? user.lastname : 'pas coo'}" ><br>
+        <input class="statut" id="nom" disabled="disabled" name="lastname" type="text" value="${user ? user.lastname : 'pas coo'}" ><br>
 
         <label for="prenom">Prenom : </label>
-        <input class="statut" id="prenom" disabled="disabled" name="prenom" type="text" value="${user ? user.firstname : "pas coo"}"><br>
+        <input class="statut" id="prenom" disabled="disabled" name="firstname" type="text" value="${user ? user.firstname : "pas coo"}"><br>
 
         <label for="email">email : </label>
-        <input class="statut" id="email" name="email" disabled="disabled" type="email" value="${user ? user.email : "pas coo"}"><br>
+        <input class="statut" id="email"  disabled="disabled" name="email" type="email" value="${user ? user.email : "pas coo"}"><br>
 
         <label for="dateNaissance">Date naissance :</label>
         <input class="statut" id="dateNaissance" name="dateNaissance" disabled="disabled" type="date" value="15/10/1981"><br>
