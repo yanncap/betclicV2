@@ -116,6 +116,7 @@ footer{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-bottom: 10px;
 }
 
 .risqueJouer{
@@ -180,6 +181,10 @@ footer{
 
 .miniMenu li:last-child{
     border-right: none;
+}
+
+.menuBande{
+    height: 30px;
 }
 
 .liForm{
@@ -650,12 +655,15 @@ footer{
 }
 
 #responSearch{
-    display: none;
     width: 250px;
 }
 
 .handCursor{
     cursor: pointer;
+}
+
+.noMob a{
+    padding-top: 3px;
 }
 
 /* MEDIA QUERIES------------------------------------------------------------------------------------*/

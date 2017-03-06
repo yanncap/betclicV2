@@ -171,7 +171,7 @@
 
 
     <nav class="menu">
-        <ul class="container flexStyleH">
+        <ul class="container flexStyleH menuBande">
             <li id="menuActif" class="noMob">
                 <a href="@{Application.index()}"><i>ACCEUIL</i></a>
             </li>
@@ -185,7 +185,7 @@
                 <a href="@{AproposController.apropos()}"><i>A PROPOS</i></a>
             </li>
             <li id="responSearch_700px">
-                <form action="html/paris.html">
+                <form action="@{BetController.bet()}" method="get">
                     <input id="responSearch" type="search" placeholder="Recherchez un pari sportif">
                 </form>
             </li>

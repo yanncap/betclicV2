@@ -1,6 +1,8 @@
 .DPinscription, .LRinscription, .DCinscription{
     background-color: lightgray;
     padding: 10px;
+    position: relative;
+    top: 20px;
 }
 
 .forInscrip{
@@ -32,12 +34,17 @@
     margin: 20px;
 }
 
+fieldset{
+    padding-top: 20px;
+}
 
 input:required {
     font-style: underline;
 }
 
-
+#residenceLabel{
+    top: 0;
+}
 
 /* MEDIA QUERIES------------------------------------------------------------------------------------*/
 
