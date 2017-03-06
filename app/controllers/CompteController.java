@@ -20,9 +20,9 @@ public class CompteController extends Controller{
             Validation.keep();
             editUser(null);
         }
-
-        user.save();
-        Application.index();
+        // TODO : regler probleme EXECUTION ERROR : occured : org.hibernate.exception.ConstraintViolationException: could not execute statement
+        //user.save();
+        compte();
     }
 
     public static void editUser(Long id) {

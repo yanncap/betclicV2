@@ -1,7 +1,10 @@
 #{extends 'main.html' /}
-#{set title:'BetClic.fr - Paris' /}
+#{set title:'BetClic.fr - Inscription' /}
 #{set 'moreStyles'}
     #{stylesheet 'inscription.css' /}
+#{/set}
+#{set 'moreScripts'}
+    #{script 'inscription.js' /}
 #{/set}
 
 <main class="container">
@@ -13,7 +16,7 @@
         Veuillez renseigner tout les champs suivi d'une *.
     </p>
     <br>
-    <form class="forInscrip" id="Verif" name="Verif" action="comptePage.html">
+    <form class="forInscrip" id="Verif" name="Verif" action="@{CompteController.creerCompteUser()}" method="post">
         <fieldset>
             <legend class="DPinscription"> DONNÉES PERSONNELLES</legend>
             <label for="prenom"> Prénom <span class="required">*</span> </label>

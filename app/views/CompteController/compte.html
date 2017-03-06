@@ -1,10 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+#{extends 'main.html' /}
+#{set title:'BetClic.fr - Compte' /}
+#{set 'moreStyles'}
+    #{stylesheet 'compte.css' /}
+#{/set}
+#{set 'moreScripts'}
+    #{script 'compte.js' /}
+#{/set}
 
-</body>
-</html>
+<main class="container">
+    <H1>Mon compte</H1>
+    <div class="ligneStylay"></div>
+
+    <form class="forCompte" method="post" >
+
+        <label for="nom">Nom : </label>
+        <input class="statut" id="nom" disabled="disabled" name="nom" type="text" value="SCHIFF" ><br>
+
+        <label for="prenom">Prenom : </label>
+        <input class="statut" id="prenom" disabled="disabled" name="prenom" type="text" value="Idir"><br>
+
+
+        <label for="email">email : </label>
+        <input class="statut" id="email" name="email" disabled="disabled" type="email" value="idschiff@gmail.com"><br>
+
+        <label for="dateNaissance">Date naissance :</label>
+        <input class="statut" id="dateNaissance" name="dateNaissance" disabled="disabled" type="date" value="15/10/1981"><br>
+
+
+        <H3>Adresse</H3>
+        <div class="ligneStylay"></div>
+
+        <label for="rue">Rue :</label>
+        <input class="statut" id="rue" name="rue" disabled="disabled" type="text" value="26 rue Thomas becket"><br>
+
+
+        <label for="cp">Code Postal: </label>
+        <input class="statut" id="cp" name="cp" disabled="disabled" type="text" value="76130"><br>
+
+
+        <label for="ville">Ville: </label>
+        <input class="statut" id="ville" name="ville" disabled="disabled" type="text" value="Mont saint aignan"><br>
+
+        <label for="pays">Pays:</label>
+        <input class="statut" id="pays" name="pays" disabled="disabled" type="text" value="France"><br>
+
+        <H3>Carte bancaire</H3>
+        <div class="ligneStylay"></div>
+
+        <p class="aletre_carte">Pour pouvoir parier vous devez indiquer les coordonnées de votre carte bancaire</p><br class="aletre_carte">
+
+        <label for="nomPorteur">Nom du porteur:</label>
+        <input class="statut" id="nomPorteur" name="nomPorteur" disabled="disabled" type="text" value="Idir SCHIFF"><br>
+
+        <label for="numCarte">Numéro de la carte:</label>
+        <input class="statut" id="numCarte" name="numCarte" disabled="disabled" type="text" value="421578463214578"><br>
+
+        <label for="codeSecurite">Code de sécurité:</label>
+        <input class="statut" id="codeSecurite" name="codeSecurite" disabled="disabled" type="text" value="012"><br>
+
+        <label for="experation">Date experation:</label>
+        <input class="statut" id="experation" name="experation" disabled="disabled" type="text" value="02/16"><br>
+
+        </div>
+        <input id="modif-button" type="button" value="Modifier" />
+        </div>
+        </div>
+        <input id="valid-button" type="button" value="Valider" />
+        </div>
+        </div>
+        <input id="annuler-button" type="button" value="Annuler" />
+        </div>
+
+    </form>
+
+</main>
