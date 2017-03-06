@@ -15,12 +15,21 @@ public class Bet extends Model{
     @Column(nullable = false)
     public String name;
     @Required
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     public Status status;
+    @ManyToOne
+    @JoinColumn(name = "betTypeId")
+    public BetType betType;
+    @ManyToOne
+    @JoinColumn(name = "meetingId")
+    public Meeting meeting;
     @OneToMany
+    @JoinColumn(name = "betId")
     public List<Cote> cotes;
     @ManyToOne
     public Cote coteWin;
     @OneToMany
+    @JoinColumn(name = "betId")
     public List<DoBet> doBets;
+
 }

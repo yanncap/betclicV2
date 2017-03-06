@@ -27,9 +27,39 @@ User(idir):
   firstname: idir
   lastname: schiff
 
+###### BetType ##########
+BetType(fullmatch):
+  name: "Full Match"
+
+BetType(mimatch):
+  name: "Mi Match"
+
+BetType(goal):
+  name: "Goal"
+
+BetType(goalplayer):
+  name: "Goal player"
+
+BetType(timegoal):
+  name: "Time Goal"
+
+###### MEETING ####
+Meeting(parismarseille):
+  name: paris-marseille
+  date: 2017-07-07
+  status: WAIT
+  bets: [1N290Mn, 1N2MT90Mn]
+
+Meeting(parisbordeaux):
+  name: paris-bordeaux
+  date: 2017-08-07
+  status: WAIT
+  bets:
+#######################
+
 #### COTE #######
 Cote(PMParis):
-  name: "Paris"
+  name: "1"
   cote: 1.5
 
 Cote(PMNul):
@@ -37,7 +67,7 @@ Cote(PMNul):
   cote: 2.3
 
 Cote(PMMarseille):
-  name: "Marseille"
+  name: "2"
   cote: 3.7
 
 #PARIS MARSEILLE MI-TEMPS##
@@ -50,21 +80,25 @@ Cote(PMMTNul):
   cote: 2.4
 
 Cote(PMMTMarseille):
-  name: "arseille"
+  name: "Marseille"
   cote: 4.8
 #################
 
 ##### BET #########
 Bet(1N290Mn):
   name: "1 N 2 - 90 Minutes"
-  status: Wait
+  status: WAIT
+  betType: fullmatch
+  meeting: parismarseille
   cotes: [PMParis, PMNul, PMMarseille]
   coteWin :
   doBets: []
 
 Bet(1N2MT90Mn):
   name: "1 N 2 - Mi Temps"
-  status: Wait
+  status: WAIT
+  betType: mimatch
+  meeting: parismarseille
   cotes: [PMMTParis, PMMTNul, PMMTMarseille]
   coteWin :
   doBets: []
@@ -96,11 +130,3 @@ DoBet(dbbob):
   betResult :
 
 #### BET RESULT #####
-
-
-###### MEETING ####
-Meeting(paris-marseille):
-  name: paris-marseille
-  date: 2017-07-07
-  status: WAIT
-  bet: [1N290Mn, 1N2MT90Mn]

@@ -34,4 +34,17 @@ public enum MeetingService {
     public List<Meeting> findBayDate(Date date){
        return MeetingDAO.INSTANCE.findByDate(date);
     }
+
+    public List<Meeting> getTopTenMeetings() throws Exception {
+        List<Meeting> meetings = MeetingDAO.INSTANCE.getTopTenMeetings();
+        if(meetings == null || meetings.isEmpty()){
+            throw new Exception("erreur lors de la récupération des meetings");
+        }
+        for (Meeting m: meetings) {
+            if(m.bets == null || m.bets.isEmpty()){
+                meetings.remove(m);
+            }
+        }
+        return meetings;
+    }
 }

@@ -22,6 +22,6 @@ public class Meeting extends Model {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     public Status status;
-    @OneToMany
-    public List<Bet> bet ;
+    @OneToMany(mappedBy = "meeting")
+    public List<Bet> bets ;
 }

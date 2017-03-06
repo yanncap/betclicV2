@@ -1,8 +1,10 @@
 package controllers;
 
-import models.Bet;
+import models.DoBet;
+import models.Meeting;
+import play.data.validation.Valid;
 import play.mvc.Controller;
-import services.BetService;
+import services.MeetingService;
 
 import java.util.List;
 
@@ -12,12 +14,21 @@ import java.util.List;
  */
 public class BetController extends LoggedController {
     public static void bet(){
-        List<Bet> bets = BetService.INSTANCE.findAll();
-        if(bets == null || bets.isEmpty()){
+        List<Meeting> meetings = null;
+        try {
+            meetings = MeetingService.INSTANCE.getTopTenMeetings();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if(meetings == null || meetings.isEmpty()){
             //error
         }
 
-        render(bets);
+        render(meetings);
+    }
+
+    public static void doBet(@Valid DoBet doBet){
+
     }
 
 }

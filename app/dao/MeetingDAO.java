@@ -1,7 +1,9 @@
 package dao;
 
 import models.Meeting;
+import org.joda.time.DateTime;
 
+import javax.persistence.Query;
 import java.util.Date;
 import java.util.List;
 
@@ -38,4 +40,9 @@ public enum MeetingDAO implements DAO<Meeting> {
         Meeting.delete("id = ?1", id);
     }
 
+    public List<Meeting> getTopTenMeetings(){
+        Query query = Meeting.em().createQuery("from Meeting m order by m.date desc");
+        List<Meeting> meetings = query.setMaxResults(10).getResultList();
+        return meetings;
+    }
 }

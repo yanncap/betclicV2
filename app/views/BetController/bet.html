@@ -5,12 +5,34 @@
 #{/set}
 #{set 'moreScripts'}
     #{script 'paris.js' /}
+    #{script 'valeurCote.js' /}
 #{/set}
+<script>
+    var cote;
+    #{list items:meetings, as:'meeting'}
+    #{list items:meeting.bets, as:'bet'}
+        #{if bet.betType.name == 'Full Match'}
+            #{list items:bet.cotes, as:'cote'}
+                #{if cote.name  == '1'}
+                    cote = ${cote ? cote.id : ""};
+                #{/if}
+                #{elseif cote.name  == 'N'}
+                    cote = ${cote.id};
+                #{/elseif}
+                #{else}
+                    cote = ${cote.id};
+                #{/else}
+            #{/list}
+        #{/if}
+    #{/list}
+    #{/list}
+</script>
 
 <div class="shadow"></div>
 <div class="modal2">
     <div id="encadreValidationPari">
-        <form method="post" action="#">
+        <form method="post" action="@{}">
+            <input type="hidden">
             <h3>Récapitulatif de votre paris :</h3>
             <div class="ligneStylay"></div>
             <div>
@@ -48,90 +70,10 @@
     <article class="contenu">
         <div class="logoCompetition"></div>
         <div class="topParis">
+
             <h3>Matchs du Samedi 25 février</h3>
             <div class="ligneStylay"></div>
-            <ul class="ligneParis colonnePari">
-                <li class="horraire"></li>
-                <li class="infoParis"></li>
-                <li class="vic">1</li>
-                <li class="vic">Nul</li>
-                <li class="vic">2</li>
-                <li class="typePari"></li>
-                <li class="stat"></li>
-            </ul>
-            <ul class="ligneParis">
-                <li class="horraire">8 H</li>
-                <li class="infoParis">
-                    <p><span class="ballon"></span>Football, Ligue 1</p>
-                    <p>Bordeaux - Dijon</p>
-                </li>
-                <li class="vic"><a>1.58</a></li>
-                <li class="vic"><a>3.80</a></li>
-                <li class="vic"><a>5.50</a></li>
-                <li class="typePari">+76</li>
-                <li class="stat">
-                    <a href="#"><img src="@{'/public/images/stats.png'}"></a>
-                </li>
-            </ul>
-            <ul class="ligneParis">
-                <li class="horraire">8 H</li>
-                <li class="infoParis">
-                    <p><span class="ballon"></span>Football, Ligue 1</p>
-                    <p>Stade Rennais FC- Paris SG</p>
-                </li>
-                <li class="vic"><a>1.58</a></li>
-                <li class="vic"><a>3.80</a></li>
-                <li class="vic"><a>5.50</a></li>
-                <li class="typePari">+76</li>
-                <li class="stat">
-                    <a href="#"><img src="@{'/public/images/stats.png'}"></a>
-                </li>
-            </ul>
-            <ul class="ligneParis">
-                <li class="horraire">8 H</li>
-                <li class="infoParis">
-                    <p><span class="ballon"></span>Football, Ligue 1</p>
-                    <p>AS Nancy-Lorraine - Dijon</p>
-                </li>
-                <li class="vic"><a>1.58</a></li>
-                <li class="vic"><a>3.80</a></li>
-                <li class="vic"><a>5.50</a></li>
-                <li class="typePari">+76</li>
-                <li class="stat">
-                    <a href="#"><img src="@{'/public/images/stats.png'}"></a>
-                </li>
-            </ul>
-            <ul class="ligneParis">
-                <li class="horraire">8 H</li>
-                <li class="infoParis">
-                    <p><span class="ballon"></span>Football, Ligue 1</p>
-                    <p>AS Monaco - Montpellier FC</p>
-                </li>
-                <li class="vic"><a>1.58</a></li>
-                <li class="vic"><a>3.80</a></li>
-                <li class="vic"><a>5.50</a></li>
-                <li class="typePari">+76</li>
-                <li class="stat">
-                    <a href="#"><img src="@{'/public/images/stats.png'}"></a>
-                </li>
-            </ul>
-            <ul class="ligneParis">
-                <li class="horraire">8 H</li>
-                <li class="infoParis">
-                    <p><span class="ballon"></span>Football, Ligue 1</p>
-                    <p>FC Nantes - FC Lorient</p>
-                </li>
-                <li class="vic"><a>1.58</a></li>
-                <li class="vic"><a>3.80</a></li>
-                <li class="vic"><a>5.50</a></li>
-                <li class="typePari">+76</li>
-                <li class="stat">
-                    <a href="#"><img src="@{'/public/images/stats.png'}"></a>
-                </li>
-            </ul>
 
-            <h3>Matchs du Dimanche 26 février</h3>
-            <div class="ligneStylay"></div>
             <ul class="ligneParis colonnePari">
                 <li class="horraire"></li>
                 <li class="infoParis"></li>
@@ -141,76 +83,36 @@
                 <li class="typePari"></li>
                 <li class="stat"></li>
             </ul>
+        #{list items:meetings, as:'meeting'}
             <ul class="ligneParis">
-                <li class="horraire">8 H</li>
+                <li class="horraire">${meeting.date.hours}H</li>
                 <li class="infoParis">
                     <p><span class="ballon"></span>Football, Ligue 1</p>
-                    <p>Bordeaux - Dijon</p>
+                    <p>${meeting.name}</p>
                 </li>
-                <li class="vic"><a>1.58</a></li>
-                <li class="vic"><a>3.80</a></li>
-                <li class="vic"><a>5.50</a></li>
+            #{list items:meeting.bets, as:'bet'}
+                #{if bet.betType.name == 'Full Match'}
+                    #{list items:bet.cotes, as:'cote'}
+                        #{if cote.name  == '1'}
+                            <li class="vic"><a>${cote.cote}</a></li>
+                        #{/if}
+                        #{elseif cote.name  == 'N'}
+                            <li class="vic"><a>${cote.cote}</a></li>
+                        #{/elseif}
+                        #{else}
+                            <li class="vic"><a>${cote.cote}</a></li>
+                        #{/else}
+                    #{/list}
+                #{/if}
+            #{/list}
                 <li class="typePari">+76</li>
                 <li class="stat">
                     <a href="#"><img src="@{'/public/images/stats.png'}"></a>
                 </li>
             </ul>
-            <ul class="ligneParis">
-                <li class="horraire">8 H</li>
-                <li class="infoParis">
-                    <p><span class="ballon"></span>Football, Ligue 1</p>
-                    <p>Bordeaux - Dijon</p>
-                </li>
-                <li class="vic"><a>1.58</a></li>
-                <li class="vic"><a>3.80</a></li>
-                <li class="vic"><a>5.50</a></li>
-                <li class="typePari">+76</li>
-                <li class="stat">
-                    <a href="#"><img src="@{'/public/images/stats.png'}"></a>
-                </li>
-            </ul>
-            <ul class="ligneParis">
-                <li class="horraire">8 H</li>
-                <li class="infoParis">
-                    <p><span class="ballon"></span>Football, Ligue 1</p>
-                    <p>Bordeaux - Dijon</p>
-                </li>
-                <li class="vic"><a>1.58</a></li>
-                <li class="vic"><a>3.80</a></li>
-                <li class="vic"><a>5.50</a></li>
-                <li class="typePari">+76</li>
-                <li class="stat">
-                    <a href="#"><img src=".@{'/public/images/stats.png'}"></a>
-                </li>
-            </ul>
-            <ul class="ligneParis">
-                <li class="horraire">8 H</li>
-                <li class="infoParis">
-                    <p><span class="ballon"></span>Football, Ligue 1</p>
-                    <p>Bordeaux - Dijon</p>
-                </li>
-                <li class="vic"><a>1.58</a></li>
-                <li class="vic"><a>3.80</a></li>
-                <li class="vic"><a>5.50</a></li>
-                <li class="typePari">+76</li>
-                <li class="stat">
-                    <a href="#"><img src="@{'/public/images/stats.png'}"></a>
-                </li>
-            </ul>
-            <ul class="ligneParis">
-                <li class="horraire">8 H</li>
-                <li class="infoParis">
-                    <p><span class="ballon"></span>Football, Ligue 1</p>
-                    <p>Bordeaux - Dijon</p>
-                </li>
-                <li class="vic"><a>1.58</a></li>
-                <li class="vic"><a>3.80</a></li>
-                <li class="vic"><a>5.50</a></li>
-                <li class="typePari">+76</li>
-                <li class="stat">
-                    <a href="#"><img src="@{'/public/images/stats.png'}"></a>
-                </li>
-            </ul>
+        #{/list}
+
+
 
         </div>
     </article>
@@ -247,4 +149,5 @@
     </aside>
 
 </main>
+
 

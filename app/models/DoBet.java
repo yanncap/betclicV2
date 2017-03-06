@@ -20,7 +20,7 @@ public class DoBet extends Model {
     @Column(nullable = false)
     public BigDecimal montant;
     @ManyToOne
-    public BetResult  result ;
+    public BetResult  result;
 
 
 }
