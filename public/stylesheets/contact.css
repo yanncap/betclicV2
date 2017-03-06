@@ -6,6 +6,7 @@
 .DPinscription, .LRinscription{
     background-color: lightgray;
     padding: 10px;
+    margin-top: 30px;
 }
 
 .forInscrip{
@@ -28,7 +29,7 @@
 
 .forInscrip .annulerInsc, .forInscrip .validerInsc{
     background: #4B99AD;
-    padding: 8px 15px 8px 15px;
+    padding: 8px 10px 8px 10px;
     border: none;
     color: #fff;
     margin: 20px;
@@ -37,4 +38,12 @@
 
 input:required {
     font-style: underline;
+}
+
+#Message{
+    width: 100%;
+}
+
+#tel{
+    margin-bottom: 20px;
 }
