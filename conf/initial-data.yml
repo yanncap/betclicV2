@@ -14,18 +14,22 @@ User(yann):
   password: test
   firstname: yann
   lastname: cap
+  birthDate : 01/01/2001
 
 User(bob):
   email: bob.bob@test.com
   password: untest
   firstname: bob
   lastname: bobi
+  birthDate : 02/02/2002
+
 
 User(idir):
   email: a@b.fr
   password: pwd
   firstname: idir
   lastname: schiff
+  birthDate: 03/03/2003
 
 ###### BetType ##########
 BetType(fullmatch):

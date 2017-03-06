@@ -7,6 +7,7 @@ import play.db.jpa.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import java.util.Date;
 
 /**
  * Created by formation on 03/03/17.
@@ -30,6 +31,10 @@ public class User  extends Model{
     @Required
     @Column(nullable = false)
     public String firstname;
+
+    @Required
+    @Column(nullable = false)
+    public Date birthDate ;
 
     //public PorteMonnaie
 }

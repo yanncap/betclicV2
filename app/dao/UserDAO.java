@@ -17,7 +17,9 @@ public enum UserDAO implements DAO<User> {
 
     @Override
     public User get(Long id) {
-        return User.find("id=?1", id).first();
+        //return User.find("id=?1", id).first();
+        return User.findById(id);
+
     }
 
     public User get(String email){

@@ -4,6 +4,7 @@ import models.User;
 import play.data.validation.Valid;
 import play.data.validation.Validation;
 import play.mvc.Controller;
+import services.UserService;
 
 /**
  * Created by choural1 on 06/03/17.
@@ -21,7 +22,6 @@ public class CompteController extends LoggedController{
 
     }
 
-
     public static void creerCompteUser(@Valid User user) {
         if (Validation.hasErrors()) {
             params.flash();
@@ -30,13 +30,15 @@ public class CompteController extends LoggedController{
         }
         // TODO : regler probleme EXECUTION ERROR : occured : org.hibernate.exception.ConstraintViolationException: could not execute statement
         //user.save();
+        UserService.INSTANCE.save(user);
         compte();
     }
 
     public static void editUser(Long id) {
         User user = null;
         if(id != null) {
-            user = User.findById(id);
+         user  = UserService.INSTANCE.get(id);
+            //user = User.findById(id);
         }
         if(user == null){
             Application.index();
@@ -44,5 +46,14 @@ public class CompteController extends LoggedController{
         render(user);
     }
 
+    public static void UpdateUser(@Valid User user){
+        if (Validation.hasErrors()) {
+            params.flash();
+            Validation.keep();
+            editUser(null);
+        }
+        UserService.INSTANCE.update(user);
+        compte();
+    }
 
 }

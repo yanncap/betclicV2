@@ -5,6 +5,7 @@ import models.User;
 import play.data.validation.Valid;
 import play.data.validation.Validation;
 import play.mvc.Controller;
+import services.UserService;
 
 import java.util.List;
 
@@ -17,10 +18,15 @@ import static controllers.secure.BetClicSecure.authenticate;
 public class InscriptionController extends LoggedController {
 
     public static void inscription(){
-        render();
+
+        if(getConnectedUser()==null){
+            render();
+        }else{
+            Application.index();
+        }
     }
 
-    public static void creerUser(@Valid User user) {
+    public static void creerUser( User user) {
 
         if (Validation.hasErrors()) {
             params.flash();
@@ -28,7 +34,8 @@ public class InscriptionController extends LoggedController {
             editUser(null);
         }
 
-        user.save();
+        //user.save();
+        UserService.INSTANCE.save(user);
 
         try {
             BetClicSecure.authenticate(user.email,user.password,true);
@@ -41,7 +48,8 @@ public class InscriptionController extends LoggedController {
     public static void editUser(Long id) {
         User user = null;
         if(id != null) {
-            user = User.findById(id);
+            //user = User.findById(id);
+            UserService.INSTANCE.get(id);
         }
         render(user);
     }

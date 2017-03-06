@@ -19,11 +19,19 @@ public enum UserService {
         return UserDAO.INSTANCE.get(email);
     }
 
+    public User get(Long id){
+        return UserDAO.INSTANCE.get(id);
+    }
+
     public User save(User user){
         User usertmp = UserDAO.INSTANCE.get(user.email);
         if(usertmp == null){
             UserDAO.INSTANCE.save(user);
         }
         return user;
+    }
+
+    public void update(User user){
+            UserDAO.INSTANCE.save(user);
     }
 }
