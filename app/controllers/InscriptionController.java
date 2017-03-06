@@ -25,7 +25,7 @@ public class InscriptionController extends Controller {
         }
 
         user.save();
-        users();
+        Application.index();
     }
 
     public static void editUser(Long id) {
@@ -36,10 +36,10 @@ public class InscriptionController extends Controller {
         render(user);
     }
 
-    private static void users() {
-            List<User> users = User.find("isSupprime = false").fetch();
-            List<User> usersSupprimes = User.find("isSupprime = true").fetch();
-            render(users, usersSupprimes);
-        }
+//    private static void users() {
+//            List<User> users = User.find("isSupprime = false").fetch();
+//            List<User> usersSupprimes = User.find("isSupprime = true").fetch();
+//            render(users, usersSupprimes);
+//        }
 
 }

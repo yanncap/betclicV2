@@ -8,6 +8,7 @@ GET     /inscription                            InscriptionController.inscriptio
 GET     /contact                                ContactController.contact
 GET     /bet                                    BetController.bet
 GET     /apropos                                AproposController.apropos
+GET     /apropos                                ContactController.saveusercontact
 
 
 # Ignore favicon requests
