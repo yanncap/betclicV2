@@ -10,7 +10,7 @@ import javax.validation.Valid;
 /**
  * Created by choural1 on 03/03/17.
  */
-public class ContactController  extends Controller{
+public class ContactController  extends LoggedController{
 
     public static void contact (){
         render();
