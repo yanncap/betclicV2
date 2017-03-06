@@ -30,6 +30,9 @@ public class CompteController extends Controller{
         if(id != null) {
             user = User.findById(id);
         }
+        if(user == null){
+            Application.index();
+        }
         render(user);
     }
 
