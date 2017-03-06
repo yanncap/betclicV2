@@ -106,12 +106,12 @@
                 <div class="formulaire">
                     #{form @secure.BetClicSecure.authenticate()}
                         <div class="triche">
-                            <input class="pseudo" id="pseudoS" type="text" name="username" placeholder="Pseudo">
+                            <input class="pseudo" id="pseudoS" type="text" name="username" placeholder="Pseudo" required>
                             <a href="#" class="lienForm"><i><u>oublié?</u></i></a>
                             #{ifError 'client.prenom'} #{error 'client.prenom' /} #{/ifError}
                         </div>
                         <span class="triche pass">
-                        <input class="password" id="passwordS" type="password" name="password" placeholder="Mot de passe">
+                        <input class="password" id="passwordS" type="password" name="password" placeholder="Mot de passe" required>
                         <a href="#" class="lienForm"><i><u>oublié?</u></i></a>
                             #{ifError 'user.password'} #{error 'user.password' /} #{/ifError}
                          </span>
