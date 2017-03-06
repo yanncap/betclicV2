@@ -39,8 +39,8 @@ function VerifMail()
 
     */
 
-$('.validerInsc').on("click", function(){ confirmInscription()});
-
-function confirmInscription(){
-    alert("samarche");
-}
+// $('.validerInsc').on("click", function(){ confirmInscription()});
+//
+// function confirmInscription(){
+//     alert("samarche");
+// }
