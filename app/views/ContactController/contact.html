@@ -17,13 +17,13 @@
             <legend class="DPinscription"> DONNÉES PERSONNELLES</legend>
 
             <label for="prenom"> Prénom <span class="required">*</span> </label>
-            <input id="prenom" name="userContact.firstname" type="text" required value="${flash["userContact.firstname"]}"><br>
+            <input id="prenom" name="userContact.firstname" type="text" value="${flash["userContact.firstname"]}"><br>
 
             <label for="nom"> Nom <span class="required">*</span></label>
-            <input id="nom" name="userContact.lastname" type="text" required value="${flash["userContact.lastname"]}"><br>
+            <input id="nom" name="userContact.lastname" type="text" value="${flash["userContact.lastname"]}"><br>
 
             <label for="Mail"> Adresse mail <span class="required">*</span> </label>
-            <input id="Mail" type="email" name="userContact.mail"  required value="${flash["userContact.email"]}"><br>
+            <input id="Mail" type="email" name="userContact.mail" value="${flash["userContact.email"]}"><br>
 
             <label for="tel"> mobile </label>
             <input id="tel" type="text" name="tel">
@@ -275,7 +275,7 @@
 
             <br>
             <label for="Message"> Message <span class="required">*</span> </label>
-            <textarea id="Message" rows="10" cols="50" name="userContact.message"  required>
+            <textarea id="Message" rows="10" cols="50" name="userContact.message">
                ${flash["userContact.message"]}
             </textarea>
 
