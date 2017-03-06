@@ -3,10 +3,7 @@ package models;
 import play.data.validation.Required;
 import play.db.jpa.Model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Enumerated;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -22,11 +19,9 @@ public class Meeting extends Model {
     @Column(nullable = false)
     public Date date;
     @Required
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     public Status status;
     @OneToMany
     public List<Bet> bet ;
-
-
 }

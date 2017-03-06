@@ -11,7 +11,6 @@ import java.util.List;
  */
 @Entity
 public class Bet extends Model{
-
     @Required
     @Column(nullable = false)
     public String name;
@@ -24,6 +23,4 @@ public class Bet extends Model{
     public Cote coteWin;
     @OneToMany
     public List<DoBet> doBets;
-
-
 }

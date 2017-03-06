@@ -21,6 +21,12 @@ User(bob):
   firstname: bob
   lastname: bobi
 
+User(idir):
+  email: a@b.fr
+  password: pwd
+  firstname: idir
+  lastname: schiff
+
 #### COTE #######
 Cote(PMParis):
   name: "Paris"
