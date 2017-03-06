@@ -17,11 +17,14 @@
         <fieldset>
             <legend class="DPinscription"> DONNÉES PERSONNELLES</legend>
             <label for="prenom"> Prénom <span class="required">*</span> </label>
-            <input id="prenom" name="prenom" type="text" required><br>
+            <input id="prenom" name="user.firstname" type="text" required><br>
+
             <label for="nom"> Nom <span class="required">*</span></label>
-            <input id="nom" name="nom" type="text" required><br>
-            <label for="date"> Date <span class="required">*</span> </label>
-            <input id="date" name="date" type="date" required><br>
+            <input id="nom" name="user.lastname" type="text" required><br>
+
+            <label for="date"> Date de Naissance<span class="required">*</span> </label>
+            <input id="date" name="date" type="date"><br>
+
             <label for="sexe"> Sexe </label>
             <input type="radio" name="gender" value="male" checked> M
             <input type="radio" name="gender" value="female"> Mme <br>
@@ -274,12 +277,10 @@
         <fieldset>
             <legend class="DCinscription"> DONNÉES DE CONNEXION </legend>
             <label for="Mail"> Adresse mail <span class="required">*</span> </label>
-            <input id="Mail" type="email" name="Mail"  required>
+            <input id="Mail" type="email" name="user.email"  required>
             <br>
-            <label for="identifiant"> Identifiant <span class="required">*</span></label>
-            <input id="identifiant" name="identifiant" type="text" required><br>
             <label for="motdepasse"> Mot de passe <span class="required">*</span></label>
-            <input id="motdepasse" name="motdepasse" type="password" required>
+            <input id="motdepasse" name="user.password" type="password" required>
         </fieldset>
         <br>
         <fieldset>
