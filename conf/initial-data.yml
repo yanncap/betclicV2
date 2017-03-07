@@ -64,33 +64,6 @@ Meeting(parisbordeaux):
   bets:
 #######################
 
-#### COTE #######
-Cote(PMParis):
-  name: "1"
-  cote: 1.5
-
-Cote(PMNul):
-  name: "N"
-  cote: 2.3
-
-Cote(PMMarseille):
-  name: "2"
-  cote: 3.7
-
-#PARIS MARSEILLE MI-TEMPS##
-Cote(PMMTParis):
-  name: "Paris"
-  cote: 1.2
-
-Cote(PMMTNul):
-  name: "N"
-  cote: 2.4
-
-Cote(PMMTMarseille):
-  name: "Marseille"
-  cote: 4.8
-#################
-
 ##### BET #########
 Bet(1N290Mn):
   name: "1 N 2 - 90 Minutes"
@@ -111,29 +84,63 @@ Bet(1N2MT90Mn):
   doBets: []
 #####################
 
+#### COTE #######
+Cote(PMParis):
+  name: "1"
+  cote: 1.5
+  bet: 1N290Mn
+
+Cote(PMNul):
+  name: "N"
+  cote: 2.3
+  bet: 1N290Mn
+
+Cote(PMMarseille):
+  name: "2"
+  cote: 3.7
+  bet: 1N290Mn
+
+#PARIS MARSEILLE MI-TEMPS##
+Cote(PMMTParis):
+  name: "Paris"
+  cote: 1.2
+
+Cote(PMMTNul):
+  name: "N"
+  cote: 2.4
+
+Cote(PMMTMarseille):
+  name: "Marseille"
+  cote: 4.8
+#################
+
 ##### DO BET ########
 DoBet(dbyann):
   user : yann
   cote : PMParis
   montant : 5.00
+  doBetDate: 07/03/2017
   betResult :
 
 DoBet(dbbob):
   user : bob
   cote : PMMarseille
   montant : 10.00
+  doBetDate: 01/01/2017
   betResult :
 
 DoBet(dbbob):
   user : yann
   cote : PMMTMarseille
   montant : 10.00
+  doBetDate: 02/01/2017
   betResult :
 
 DoBet(dbbob):
   user : bob
   cote : PMMTMarseille
   montant : 8.00
+  doBetDate: 02/02/2017
   betResult :
 
 #### BET RESULT #####

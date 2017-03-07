@@ -49,17 +49,19 @@ public class BetController extends LoggedController {
         User user = getConnectedUser();
 
         try {
-            DoBetService.INSTANCE.createDoBet(cote, user, BigDecimal.valueOf(montant));
+            DoBet doBet = DoBetService.INSTANCE.createDoBet(cote, user, BigDecimal.valueOf(montant));
+            if(user.solde.compareTo(doBet.montant) >= 0){
+                user.solde = user.solde.subtract(doBet.montant);
+                Logger.info( "%s doBet user solde : [%s] user persistent? [%s]", LOGGING, user.solde,user.isPersistent());
+                UserService.INSTANCE.update(user);
+            }
         } catch (ObjectCreationException e) {
             render(e);
         }
 
         Application.index();
-
-
-
-
-
     }
+
+    
 
 }

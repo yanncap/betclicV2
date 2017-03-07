@@ -8,6 +8,8 @@ POST      /login                                secure.BetClicSecure.authenticat
 GET       /login                                secure.BetClicSecure.authenticate
 GET       /logout                               secure.BetClicSecure.logout
 
+# API
+POST    /api/result                             api.ApiBetController.result
 
 # Home page
 GET     /                                       Application.index

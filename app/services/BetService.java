@@ -31,6 +31,10 @@ public enum  BetService {
        BetDAO.INSTANCE.save(bet);
     }
 
+    public void update(Bet bet){
+        BetDAO.INSTANCE.save(bet);
+    }
+
     public void delete(Long id){
         BetDAO.INSTANCE.delete(id);
     }

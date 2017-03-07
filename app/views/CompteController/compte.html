@@ -23,7 +23,7 @@
         <input class="statut" id="email"  disabled="disabled" name="email" type="email" value="${user ? user.email : "pas coo"}"><br>
 
         <label for="dateNaissance">Date naissance :</label>
-        <input class="statut" id="dateNaissance" name="dateNaissance" disabled="disabled" type="datetime" value="${user ? user.birthDate : "pas coo"}"><br>
+        <input class="statut" id="dateNaissance" name="dateNaissance" disabled="disabled" type="datetime" value="${user ? user.birthDate.format('dd/MM/yyyy') : "pas coo"}"><br>
 
 
         <H3>Adresse</H3>
@@ -73,23 +73,16 @@
     </form>
     <div class="ligneStylay"></div>
     <h2>Historique des derniers Paris</h2>
+
     <div class="historiqueBet">
         <ul>
+        #{list items:user.doBets, as: 'doBet'}
             <li class="unitHistorique">
-                <div>Date:</div>
-                <div>Pari:</div>
-                <div>Montant:</div>
+                <div>Date: ${doBet.doBetDate.format('dd MMMM yyyy')}</div>
+                <div>Pari: ${doBet.cote.bet.meeting.name} : ${doBet.cote.name} ${doBet.cote.cote}</div>
+                <div>Montant: ${doBet.montant}</div>
             </li>
-            <li class="unitHistorique">
-                <div>Date:</div>
-                <div>Pari:</div>
-                <div>Montant:</div>
-            </li>
-            <li class="unitHistorique">
-                <div>Date:</div>
-                <div>Pari:</div>
-                <div>Montant:</div>
-            </li>
+        #{/list}
         </ul>
     </div>
 

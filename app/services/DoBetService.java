@@ -6,6 +6,7 @@ import exception.ObjectCreationException;
 import models.Cote;
 import models.DoBet;
 import models.User;
+import org.joda.time.DateTime;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -39,11 +40,14 @@ public enum DoBetService {
             throw new ObjectCreationException("Un problème est survenu lors de la création d'un objet DoBet");
         }
         DoBet doBet = new DoBet();
+        doBet.doBetDate = DateTime.now().toDate();
+        //doBet.bet =?
         doBet.cote = cote;
         doBet.user = user;
+
         doBet.montant = montant;
 
-        DoBetDAO.INSTANCE.save(doBet);
+        save(doBet);
 
         return doBet;
 

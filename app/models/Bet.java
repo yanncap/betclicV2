@@ -23,8 +23,7 @@ public class Bet extends Model{
     @ManyToOne
     @JoinColumn(name = "meetingId")
     public Meeting meeting;
-    @OneToMany
-    @JoinColumn(name = "betId")
+    @OneToMany(mappedBy = "bet")
     public List<Cote> cotes;
     @ManyToOne
     public Cote coteWin;
