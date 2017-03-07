@@ -45,7 +45,7 @@ function initCarou(){
     $(".fondCarou").css("width", NbrItemCarou*700+"px");
     for (var i=0 ; i<NbrItemCarou ; i++){
         $(".fondCarou").append("<div class='itemCarou' id='itemCarou"+i+"'><img src='/public/images/"+ tabLien[i] +"'></div>");
-        $('#itemCarou'+i).append("<a href='"+lien+"?id=100'><div class='lienCarou'><h6 class='titreItem1'>"+ tabTitre1[i] +"</h6><h5 class='titreItem2'>"+ tabTitre2[i] +"</h5></div></a>");
+        $('#itemCarou'+i).append("<a href='"+lien+"?id="+cibleID[i]+"'><div class='lienCarou'><h6 class='titreItem1'>"+ tabTitre1[i] +"</h6><h5 class='titreItem2'>"+ tabTitre2[i] +"</h5></div></a>");
     }
 }
 

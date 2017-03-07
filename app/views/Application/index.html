@@ -2,6 +2,11 @@
 #{set title:'BetClic.fr' /}
 <script>
     var lien = "@{BetController.bet()}";
+    var cibleID= [0,0,3,0,0];
+    #{if bet != null}
+    <!--TODO : envoyer les id pour la banniere -->
+        cibleID = [${bet.id[0]},${bet.id[1]},${bet.id[2]},${bet.id[3]},${bet.id[4]}];
+    #{/if}
 </script>
 
 <main class="container principale">
