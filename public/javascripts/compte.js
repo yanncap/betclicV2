@@ -1,36 +1,34 @@
 /**
  * Created by formation on 07/02/17.
  */
+document.addEventListener("DOMContentLoaded", function(event) {
+    //do work
+    alert("testeeeeeee");
+    validerChamps();
 
-(function ($) {
-    $(function(){
 
-      validerChamps();
+    $('#modif-button').on('click',function () {
 
+        $('.statut').attr("disabled",false);
+        $('#valid-button,#annuler-button').css("display","inline-block");
 
-        $('#modif-button').on('click',function () {
+    });
 
-                $('.statut').attr("disabled",false);
-                $('#valid-button,#annuler-button').css("display","inline-block");
+    $('#valid-button').on('click',function () {
 
-        })
+        $('.statut').attr("disabled",true);
+        $(this).css("display","none");
+        $('#annuler-button').css("display","none");
+        validerChamps();
 
-        $('#valid-button').on('click',function () {
+    });
+    $('#annuler-button').on('click',function () {
 
-            $('.statut').attr("disabled",true);
-            $(this).css("display","none");
-            $('#annuler-button').css("display","none");
-            validerChamps();
+        $('.statut').attr("disabled",true);
+        $(this).css("display","none");
+        $('#valid-button').css("display","none");
+        validerChamps();
 
-        })
-        $('#annuler-button').on('click',function () {
-
-            $('.statut').attr("disabled",true);
-            $(this).css("display","none");
-            $('#valid-button').css("display","none");
-            validerChamps();
-
-        })
     });
 
     function validerChamps(){
@@ -41,6 +39,6 @@
             $('.aletre_carte').css("display","none");
         }
     }
+});
 
 
-})(jQuery);

@@ -10,6 +10,7 @@ import models.*;
 public class Application extends LoggedController {
 
     public static void index() {
+
         render();
     }
 

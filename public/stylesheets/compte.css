@@ -11,7 +11,6 @@
 
 #modif-button,#valid-button,#annuler-button,#accueil-button{
     width: 89px;
-    background-color: black;
     color: white;
     border: transparent;
     border-radius: 3px;
@@ -19,8 +18,18 @@
     margin-top: 12px;
     font-size: 18px;
 }
-#valid-button,#annuler-button{
+#valid-button{
     display: none;
+    background-color: green ;
+}
+
+#annuler-button{
+    display: none;
+    background-color: red;
+}
+
+#modif-button{
+    background-color: black;
 }
 
 #accueil-button{
