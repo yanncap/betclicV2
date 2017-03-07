@@ -2,8 +2,6 @@
  * Created by formation on 07/02/17.
  */
 document.addEventListener("DOMContentLoaded", function(event) {
-    //do work
-    alert("testeeeeeee");
     validerChamps();
 
 
