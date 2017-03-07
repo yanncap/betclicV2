@@ -184,7 +184,7 @@ footer{
 }
 
 .menuBande{
-    height: 30px;
+    height: 26px;
 }
 
 .liForm{
@@ -656,6 +656,8 @@ footer{
 
 #responSearch{
     width: 250px;
+    border: solid 1px #999;
+    height: 20px;
 }
 
 .handCursor{
