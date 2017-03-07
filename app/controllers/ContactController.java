@@ -1,5 +1,7 @@
 package controllers;
 
+import controllers.secure.BetClicSecure;
+import models.User;
 import models.UserContact;
 import play.data.validation.Validation;
 import play.mvc.Controller;
@@ -13,7 +15,18 @@ import javax.validation.Valid;
 public class ContactController  extends LoggedController{
 
     public static void contact (){
-        render();
+        if(getConnectedUser()!=null){
+            User user = getConnectedUser();
+            UserContact userContact = new UserContact();
+            userContact.firstname = user.firstname;
+            userContact.lastname = user.lastname;
+            userContact.email = user.email;
+
+        render(userContact);
+    }
+    else{
+            render();
+        }
     }
 
 //    public static void validationFormulaireContact(@Valid UserContact user){
@@ -30,14 +43,13 @@ public class ContactController  extends LoggedController{
         if (Validation.hasErrors()) {
             params.flash();
             Validation.keep();
-            System.out.println("Je suis la 1");
             contact();
-            System.out.println("Je suis la 2");
         }
         UserContactService.INSTANCE.save(userContact);
         Application.index();
 
     }
+
 
 //    protected static void apiValidationErrors(List<Error> errors) {
 //        JsonObject json = new JsonObject();
