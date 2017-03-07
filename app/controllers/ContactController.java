@@ -26,6 +26,7 @@ public class ContactController  extends LoggedController{
 
 
     public static void saveUserContact(@Valid UserContact userContact) {
+
         if (Validation.hasErrors()) {
             params.flash();
             Validation.keep();

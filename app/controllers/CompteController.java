@@ -21,30 +21,19 @@ public class CompteController extends LoggedController{
         }
 
     }
+//
+//    public static void creerCompteUser(@Valid User user) {
+//        if (Validation.hasErrors()) {
+//            params.flash();
+//            Validation.keep();
+//            editUser(null);
+//        }
+//        // TODO : regler probleme EXECUTION ERROR : occured : org.hibernate.exception.ConstraintViolationException: could not execute statement
+//        //user.save();
+//        UserService.INSTANCE.save(user);
+//        compte();
+//    }
 
-    public static void creerCompteUser(@Valid User user) {
-        if (Validation.hasErrors()) {
-            params.flash();
-            Validation.keep();
-            editUser(null);
-        }
-        // TODO : regler probleme EXECUTION ERROR : occured : org.hibernate.exception.ConstraintViolationException: could not execute statement
-        //user.save();
-        UserService.INSTANCE.save(user);
-        compte();
-    }
-
-    public static void editUser(Long id) {
-        User user = null;
-        if(id != null) {
-         user  = UserService.INSTANCE.get(id);
-            //user = User.findById(id);
-        }
-        if(user == null){
-            Application.index();
-        }
-        render(user);
-    }
 
     public static void UpdateUser(@Valid User user){
         if (Validation.hasErrors()) {
@@ -55,5 +44,17 @@ public class CompteController extends LoggedController{
         UserService.INSTANCE.update(user);
         compte();
     }
+    public static void editUser(Long id) {
+        User user = null;
+        if(id != null) {
+            user  = UserService.INSTANCE.get(id);
+            //user = User.findById(id);
+        }
+        if(user == null){
+            Application.index();
+        }
+        render(user);
+    }
+
 
 }

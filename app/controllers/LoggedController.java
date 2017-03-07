@@ -17,6 +17,7 @@ public class LoggedController extends Controller {
     }
 
     protected static User getConnectedUser(){
+
         return (User)renderArgs.get("connectedUser");
     }
 
