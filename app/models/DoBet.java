@@ -4,6 +4,7 @@ import play.db.jpa.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.math.BigDecimal;
 
@@ -14,6 +15,7 @@ import java.math.BigDecimal;
 public class DoBet extends Model {
 
     @ManyToOne
+    @JoinColumn(name = "doBetId")
     public  User user;
     @ManyToOne
     public Cote cote;

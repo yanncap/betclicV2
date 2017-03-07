@@ -2,9 +2,12 @@ package services;
 
 import dao.CoteDAO;
 import dao.DoBetDAO;
+import exception.ObjectCreationException;
 import models.Cote;
 import models.DoBet;
+import models.User;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -29,5 +32,20 @@ public enum DoBetService {
 
     public void delete(Long id){
         DoBetDAO.INSTANCE.delete(id);
+    }
+
+    public DoBet createDoBet(Cote cote, User user, BigDecimal montant) throws ObjectCreationException {
+        if(cote == null || user == null || montant.doubleValue() <= 0){
+            throw new ObjectCreationException("Un problème est survenu lors de la création d'un objet DoBet");
+        }
+        DoBet doBet = new DoBet();
+        doBet.cote = cote;
+        doBet.user = user;
+        doBet.montant = montant;
+
+        DoBetDAO.INSTANCE.save(doBet);
+
+        return doBet;
+
     }
 }

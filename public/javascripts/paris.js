@@ -13,28 +13,35 @@
         $('#miseInput').val("");
     });
 
+
+
     $('.vic a').on('click', function(){
         console.log("valeur de la cote : " + $(this).html());
         $('#cote').html($(this).html());
         var tempURL = $(this).parent().parent().find(".infoParis p:nth-child(2)");
         console.log("valeur du match : " + $(tempURL).html()/* $(' .infoParis p:nth-child(2)').html()*/);
         $('#selectedMatch').html($(tempURL).html());
+        var coteId;
+        coteId = $(this).parents('.vic').attr('value');
+        $('#idcote').val(coteId);
+        $("input[name='coteId']:hidden").val(coteId);
+        console.log('valeur de coteid : ' + coteId);
         $('.shadow, .modal2').show();
     });
 
     $('#miseInput').on('input', function(){calculGain()})
 
-    var login = "";
-    var password = "";
+    //var login = "";
+    //var password = "";
 
-    $('#validerParis').on('click', function () {
+    /*$('#validerParis').on('click', function () {
         if(!userCoo){
             $('#parisValide').addClass('colorRed').html('Vous devez vous connecter pour parier !')
         }
         else{
             $('#parisValide').addClass('colorRed').html('Votre paris a bien été pris en compte')
         }
-    })
+    })*/
 
 })(jQuery);
 

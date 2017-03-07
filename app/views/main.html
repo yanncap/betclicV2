@@ -96,6 +96,7 @@
             #{if controllers.secure.BetClicSecure.Security.isConnected() && connectedUser}
                 <li>
                     <p>Bienvenue ${connectedUser.firstname} ${connectedUser.lastname} </p>
+                    <p>Votre solde : ${connectedUser.solde} €</p>
                     <p><a href="@{CompteController.compte()}">Mon compte</a></p>
                     <p><a href="@{secure.BetClicSecure.logout()}">Se déconnecter</a></p>
                 </li>

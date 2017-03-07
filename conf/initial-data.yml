@@ -15,6 +15,7 @@ User(yann):
   firstname: yann
   lastname: cap
   birthDate : 01/01/2001
+  solde : 500
 
 User(bob):
   email: bob.bob@test.com
@@ -22,6 +23,7 @@ User(bob):
   firstname: bob
   lastname: bobi
   birthDate : 02/02/2002
+  solde: 200
 
 
 User(idir):
@@ -30,6 +32,7 @@ User(idir):
   firstname: idir
   lastname: schiff
   birthDate: 03/03/2003
+  solde: 10000
 
 ###### BetType ##########
 BetType(fullmatch):

@@ -7,7 +7,10 @@ import play.db.jpa.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by formation on 03/03/17.
@@ -34,7 +37,11 @@ public class User  extends Model{
 
     @Required
     @Column(nullable = false)
-    public Date birthDate ;
+    public Date birthDate;
 
-    //public PorteMonnaie
+    @OneToMany(mappedBy = "user")
+    public List<DoBet> doBets;
+
+    public BigDecimal solde;
+
 }

@@ -14,6 +14,7 @@ GET     /                                       Application.index
 GET     /inscription                            InscriptionController.inscription
 GET     /contact                                ContactController.contact
 GET     /bet                                    BetController.bet
+POST    /bet                                    BetController.doBet
 GET     /apropos                                AproposController.apropos
 GET     /contact                                ContactController.saveusercontact
 POST    /contact                                ContactController.saveUserContact

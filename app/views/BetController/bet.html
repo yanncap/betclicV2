@@ -5,34 +5,13 @@
 #{/set}
 #{set 'moreScripts'}
     #{script 'paris.js' /}
-    #{script 'valeurCote.js' /}
 #{/set}
-<script>
-    var cote;
-    #{list items:meetings, as:'meeting'}
-    #{list items:meeting.bets, as:'bet'}
-        #{if bet.betType.name == 'Full Match'}
-            #{list items:bet.cotes, as:'cote'}
-                #{if cote.name  == '1'}
-                    cote = ${cote ? cote.id : ""};
-                #{/if}
-                #{elseif cote.name  == 'N'}
-                    cote = ${cote.id};
-                #{/elseif}
-                #{else}
-                    cote = ${cote.id};
-                #{/else}
-            #{/list}
-        #{/if}
-    #{/list}
-    #{/list}
-</script>
 
 <div class="shadow"></div>
 <div class="modal2">
     <div id="encadreValidationPari">
-        <form method="post" action="@{}">
-            <input type="hidden">
+        <form method="post" action="@{controllers.BetController.doBet()}">
+            <input type="hidden" id="idCote" name="coteId" value="">
             <h3>Récapitulatif de votre paris :</h3>
             <div class="ligneStylay"></div>
             <div>
@@ -42,7 +21,7 @@
                     <span>Cote :</span><span id="cote" class="colorRed">1.58</span>
                     <span class="spanMise">
                             <label for="miseInput">Votre mise :</label>
-                            <input id="miseInput" type="text">€
+                            <input id="miseInput" type="text" name="montant">€
                     </span>
                 </div>
                 <span class="spanMise">Gains possibles :</span>
@@ -50,7 +29,7 @@
             </div><br>
             <div class="ligneStylay"></div>
             <a href="paris.html">Retour aux paris</a>
-            <input class="submitButton" id="validerParis" type="button" name="validerPari" value="Parier maintenant"><br>
+            <input class="submitButton" id="validerParis" type="submit" name="validerPari" value="Parier maintenant"><br>
             <span id="parisValide"></span>
         </form>
     </div>
@@ -94,13 +73,22 @@
                 #{if bet.betType.name == 'Full Match'}
                     #{list items:bet.cotes, as:'cote'}
                         #{if cote.name  == '1'}
-                            <li class="vic"><a>${cote.cote}</a></li>
+                            <li class="vic" value="${cote.id}">
+                                <a>${cote.cote}</a>
+                                <input type="hidden" class="CoteId" value="${cote.id}">
+                            </li>
                         #{/if}
                         #{elseif cote.name  == 'N'}
-                            <li class="vic"><a>${cote.cote}</a></li>
+                            <li class="vic" value="${cote.id}">
+                                <a>${cote.cote}</a>
+                                <input type="hidden" class="CoteId" value="${cote.id}">
+                            </li>
                         #{/elseif}
                         #{else}
-                            <li class="vic"><a>${cote.cote}</a></li>
+                            <li class="vic" value="${cote.id}">
+                                <a>${cote.cote}</a>
+                                <input type="hidden" class="CoteId" value="${cote.id}">
+                            </li>
                         #{/else}
                     #{/list}
                 #{/if}
@@ -111,11 +99,9 @@
                 </li>
             </ul>
         #{/list}
-
-
-
         </div>
     </article>
+    ${e.message}
 
 
     <aside class="aCote">

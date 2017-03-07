@@ -1,11 +1,21 @@
 package controllers;
 
+import exception.ObjectCreationException;
+import models.Cote;
 import models.DoBet;
 import models.Meeting;
+import models.User;
+import play.Logger;
+import play.data.validation.Required;
 import play.data.validation.Valid;
+import play.data.validation.Validation;
 import play.mvc.Controller;
+import services.CoteService;
+import services.DoBetService;
 import services.MeetingService;
+import services.UserService;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 
@@ -13,6 +23,9 @@ import java.util.List;
  * Created by choural1 on 03/03/17.
  */
 public class BetController extends LoggedController {
+
+    public static final String LOGGING = "BetController |";
+
     public static void bet(){
         List<Meeting> meetings = null;
         try {
@@ -20,14 +33,32 @@ public class BetController extends LoggedController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        if(meetings == null || meetings.isEmpty()){
-            //error
-        }
 
         render(meetings);
     }
 
-    public static void doBet(@Valid DoBet doBet){
+    public static void doBet(@Required Long coteId, @Required double montant){
+        Logger.info(LOGGING + " doBet id=[%s], montant=[%s]", coteId, montant);
+
+        if(Validation.hasErrors()){
+            params.flash();
+            Validation.keep();
+        }
+
+        Cote cote = CoteService.INSTANCE.get(coteId);
+        User user = getConnectedUser();
+
+        try {
+            DoBetService.INSTANCE.createDoBet(cote, user, BigDecimal.valueOf(montant));
+        } catch (ObjectCreationException e) {
+            render(e);
+        }
+
+        Application.index();
+
+
+
+
 
     }
 
