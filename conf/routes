@@ -11,6 +11,8 @@ GET       /logout                               secure.BetClicSecure.logout
 # API
 POST    /api/result                             api.ApiBetController.result
 GET     /api/bets                               api.ApiBetController.bets
+POST   /api/user/signup                         api.ApiInscription.signUp
+
 
 # Home page
 GET     /                                       Application.index
