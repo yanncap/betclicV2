@@ -1,6 +1,8 @@
 package controllers.api;
 
 import models.*;
+import models.api.adapters.BetWhithoutMeetingSerializer;
+import models.api.adapters.CoteWhithoutBetSerializer;
 import play.data.validation.Required;
 import play.data.validation.Validation;
 import services.*;
@@ -16,12 +18,12 @@ public class ApiBetController extends ApiController {
     public static void bets(){
         List<Meeting> meetings = null;
         try {
-            meetings = MeetingService.INSTANCE.getTopTenMeetings();
+            meetings = MeetingService.INSTANCE.findAll();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        renderJSON(meetings);
+        renderJSON(meetings, BetWhithoutMeetingSerializer.getInstance(), CoteWhithoutBetSerializer.getInstance());
     }
 
     public static void result(@Required Long coteWinId, @Required Long betId, @Required Long doBetId, @Required String email){
