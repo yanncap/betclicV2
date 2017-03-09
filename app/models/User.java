@@ -44,4 +44,13 @@ public class User  extends Model{
 
     public BigDecimal solde;
 
+    public String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
 }
