@@ -1,4 +1,5 @@
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import models.Meeting;
 import org.junit.Test;
@@ -28,27 +29,40 @@ public class ApiBetControllerTest extends FunctionalTest{
     }
 
     @Test
-    public void voidtestBetsIsNotNull(){
+    public void testBetsIsNotNull(){
         //GIVEN
         //WHEN
-        Http.Response response = GET("/api/bets");
+        Http.Response response = POST("/api/bets");
         //THEN
         System.out.println(response.out);
         Type type = new TypeToken<ArrayList<Meeting>>(){}.getType();
         List<Meeting> meetings = new Gson().fromJson(response.out.toString(), type);
-        assertEquals(2, meetings.size());
-        assertEquals("paris-marseille", meetings.get(0).name);
-        //assertThat(renderArgs("meetings"), is(notNullValue()));
+        System.out.println(response.out);
+
+        assertNotNull(meetings);
     }
 
     @Test
-    public void voidtestBetsIsPassedToWiew(){
+    public void testBetsIsNotEmpty(){
         //GIVEN
         //WHEN
         Http.Response response = GET("/api/bets");
         //THEN
-        List<Meeting> meetings = (List<Meeting>) renderArgs("bets");
-        assertThat(meetings.get(0).name, is("paris-marseille"));
+        Type type = new TypeToken<ArrayList<Meeting>>(){}.getType();
+        List<Meeting> meetings = new Gson().fromJson(response.out.toString(), type);
+        assertEquals(2, meetings.size());
+    }
+
+    @Test
+    public void testBetsWorks(){
+        //GIVEN
+        //WHEN
+        Http.Response response = GET("/api/bets");
+        //THEN
+        Type type = new TypeToken<ArrayList<Meeting>>(){}.getType();
+        List<Meeting> meetings = new Gson().fromJson(response.out.toString(), type);
+
+        assertEquals("paris-marseille", meetings.get(0).name);
     }
 
 

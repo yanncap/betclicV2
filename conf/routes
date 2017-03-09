@@ -10,7 +10,7 @@ GET       /logout                               secure.BetClicSecure.logout
 
 # API
 POST    /api/result                             api.ApiBetController.result
-GET     /api/bets                               api.ApiBetController.bets
+GET     /api/meetings                           api.ApiBetController.meetings
 POST   /api/user/signup                         api.ApiInscription.signUp
 
 
