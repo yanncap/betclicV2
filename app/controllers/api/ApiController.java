@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import controllers.LoggedController;
 import controllers.api.result.NoContent;
 import controllers.api.result.NotFound;
+import models.api.adapters.MeetingSerializer;
 import play.data.validation.Error;
 import play.mvc.results.RenderJson;
 
@@ -15,10 +16,10 @@ public class ApiController extends LoggedController {
         throw new NoContent();
     }
 
-    /*protected static void apiCreated(Object object) {
+    protected static void apiCreated(Object object) {
         response.status = 201;
-        throw new RenderJson(object, ClientSerializer.get());
-    }*/
+        throw new RenderJson(object, MeetingSerializer.getInstance());
+    }
 
     protected static void apiNotFound(String message) {
         throw new NotFound(message);

@@ -6,11 +6,23 @@ import play.data.validation.Validation;
 import services.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * Created by formation on 07/03/17.
  */
 public class ApiBetController extends ApiController {
+
+    public static void bets(){
+        List<Meeting> meetings = null;
+        try {
+            meetings = MeetingService.INSTANCE.getTopTenMeetings();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        renderJSON(meetings);
+    }
 
     public static void result(@Required Long coteWinId, @Required Long betId, @Required Long doBetId, @Required String email){
         if(Validation.hasErrors()){
