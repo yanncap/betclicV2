@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class ApiBetController extends ApiController {
 
-    public static void bets(){
+    public static void meetings(){
         List<Meeting> meetings = null;
         try {
             meetings = MeetingService.INSTANCE.findAll();
