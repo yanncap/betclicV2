@@ -65,7 +65,6 @@ public class ApiBetController extends ApiController {
                 user.solde.add(db.montant);
             }
         }
-
         renderJSON(user);
 
     }

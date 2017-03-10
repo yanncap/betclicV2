@@ -24,7 +24,7 @@ public class ApiBetControllerTest extends FunctionalTest{
 
     @Test
     public void apiBetsTest(){
-        Http.Response response = GET("/api/bets");
+        Http.Response response = GET("/api/meetings");
         assertStatus(200, response);
     }
 
@@ -32,7 +32,7 @@ public class ApiBetControllerTest extends FunctionalTest{
     public void testBetsIsNotNull(){
         //GIVEN
         //WHEN
-        Http.Response response = POST("/api/bets");
+        Http.Response response = POST("/api/meetings");
         //THEN
         System.out.println(response.out);
         Type type = new TypeToken<ArrayList<Meeting>>(){}.getType();
@@ -46,7 +46,7 @@ public class ApiBetControllerTest extends FunctionalTest{
     public void testBetsIsNotEmpty(){
         //GIVEN
         //WHEN
-        Http.Response response = GET("/api/bets");
+        Http.Response response = GET("/api/meetings");
         //THEN
         Type type = new TypeToken<ArrayList<Meeting>>(){}.getType();
         List<Meeting> meetings = new Gson().fromJson(response.out.toString(), type);
@@ -57,7 +57,7 @@ public class ApiBetControllerTest extends FunctionalTest{
     public void testBetsWorks(){
         //GIVEN
         //WHEN
-        Http.Response response = GET("/api/bets");
+        Http.Response response = GET("/api/meetings");
         //THEN
         Type type = new TypeToken<ArrayList<Meeting>>(){}.getType();
         List<Meeting> meetings = new Gson().fromJson(response.out.toString(), type);
