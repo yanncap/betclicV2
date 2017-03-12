@@ -33,7 +33,6 @@ public class UserSerializer implements JsonSerializer<User> {
         json.addProperty("firstname", user.firstname);
         json.addProperty("lastname", user.lastname);
         json.addProperty("email", user.email);
-        json.addProperty("password",user.password);
         json.addProperty("solde",user.solde);
         json.addProperty("birthDate", String.valueOf(user.birthDate));
         return json;

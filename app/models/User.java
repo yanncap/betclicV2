@@ -1,5 +1,6 @@
 package models;
 
+import org.joda.time.DateTime;
 import play.data.validation.Email;
 import play.data.validation.Password;
 import play.data.validation.Required;

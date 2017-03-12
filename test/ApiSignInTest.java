@@ -1,4 +1,5 @@
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import models.Meeting;
 import models.User;
@@ -32,12 +33,23 @@ public class ApiSignInTest extends FunctionalTest {
         assertStatus(200,response);
     }
     @Test
-    public void signIn_notValidFields() {
+    public void signIn_notValidEmail() {
         String email = "coucou";
+        String password ="pwd";
+        Http.Response  response = POST("/api/login?email="+email+"&password="+password);
+       // assertStatus(404,response);
+        JsonObject jsonObject = new Gson().fromJson(response.out.toString(),JsonObject.class);
+        assertEquals("validation.email",jsonObject.getAsJsonObject("errors").get("email").getAsString());
+
+    }
+    @Test
+    public void signIn_notValidFields() {
+        String email = "fauxMail@domain.fr";
         String password ="pwd";
         Http.Response  response = POST("/api/login?email="+email+"&password="+password);
         assertStatus(404,response);
     }
+
 
     @Test
     public void signIn_givenToken() {
@@ -49,7 +61,7 @@ public class ApiSignInTest extends FunctionalTest {
         //THEN
         Type type = new TypeToken<String>(){}.getType();
         String token = new Gson().fromJson(response.out.toString(), type);
-       /*String token = new Gson().fromJson(response.out.toString(),String.class);*/ /* ça marche aussi */
+       /* ça marche aussi : String token = new Gson().fromJson(response.out.toString(),String.class);*/
         System.out.println("token| : "+token);
         assertNotNull(token);
     }
