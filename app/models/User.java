@@ -54,4 +54,17 @@ public class User  extends Model{
     public void setToken(String token) {
         this.token = token;
     }
+
+    public UserTransfert getUserTransfert() {
+        return new UserTransfert(this.token);
+    }
+
+    class UserTransfert {
+
+        public String token;
+
+        public UserTransfert(String token) {
+            this.token = token;
+        }
+    }
 }

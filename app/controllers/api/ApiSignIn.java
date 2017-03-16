@@ -27,7 +27,7 @@ public class ApiSignIn extends ApiController {
             }
             UserService.INSTANCE.save(existingUser);
 
-            renderJSON(existingUser.token);
+            renderJSON(existingUser.getUserTransfert());
         } else {
          apiNotFound("L'utilisateur n'existe pas");
         }
