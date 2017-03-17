@@ -11,7 +11,7 @@
 
 User(yann):
   email: yann.cap@live.com
-  password: test
+  password: a94a8fe5ccb19ba61c4c0873d391e987982fbbd3 # test
   firstname: yann
   lastname: cap
   birthDate : 01/01/2001
@@ -19,7 +19,7 @@ User(yann):
 
 User(bob):
   email: bob.bob@test.com
-  password: untest
+  password: 479c12ae9e129ee4f953958d37abfad011300f13 # untest
   firstname: bob
   lastname: bobi
   birthDate : 02/02/2002
@@ -28,7 +28,7 @@ User(bob):
 
 User(idir):
   email: a@b.fr
-  password: pwd
+  password: 37fa265330ad83eaa879efb1e2db6380896cf639 #pwd
   firstname: idir
   lastname: schiff
   birthDate: 03/03/2003
