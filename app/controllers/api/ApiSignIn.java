@@ -19,9 +19,10 @@ public class ApiSignIn extends ApiController {
             apiValidationErrors(Validation.errors());
         }
 
-        User existingUser = User.find("email = ?1", email).first();
+        User existingUser = User.find("email = ?1 AND password=?2", email, password).first();
 
         if (existingUser != null) {
+
             if(existingUser.token==null){
                 existingUser.token = UUID.randomUUID().toString();
             }
@@ -29,8 +30,7 @@ public class ApiSignIn extends ApiController {
 
             renderJSON(existingUser.getUserTransfert());
         } else {
-         apiNotFound("L'utilisateur n'existe pas");
+         apiNotFound("Erreur d'authentification");
         }
-
     }
 }
